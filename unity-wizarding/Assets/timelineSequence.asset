@@ -30,3 +30,6 @@ MonoBehaviour:
   - Time: 4.5
     RuneType: 0
     TimelineIndex: 1
+  - Time: 5
+    RuneType: 1
+    TimelineIndex: 0

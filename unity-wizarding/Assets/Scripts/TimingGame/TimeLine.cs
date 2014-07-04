@@ -7,7 +7,8 @@ public class TimeLine : MonoBehaviour
     #region Properties
     public const float MAX_DIST = 1.5f;
 
-    public event Action TimelineActivated;
+    public event Action HitSymbol;
+    public event Action MissedSymbol;
 
     [HideInInspector]
     public KeyCode ActivateKey;
@@ -34,12 +35,18 @@ public class TimeLine : MonoBehaviour
 
         var symbol = go.GetComponent<TimeLineSymbol>();
         symbol.MissedSymbol += symbol_MissedSymbol;
+        if (MissedSymbol != null)
+        {
+            MissedSymbol();
+        }
+
         activeSymbols.Add(symbol);
     }
 
-    void symbol_MissedSymbol(TimeLineSymbol symbols)
+    void symbol_MissedSymbol(TimeLineSymbol symbol)
     {
-        activeSymbols.Remove(symbols);
+        symbol.MissedSymbol -= symbol_MissedSymbol;
+        activeSymbols.Remove(symbol);
     }
 	
 	// Update is called once per frame
@@ -53,15 +60,15 @@ public class TimeLine : MonoBehaviour
 
 	        if (normDist < 1.0f)
 	        {
+                firstSymbol.MissedSymbol -= symbol_MissedSymbol;
                 activeSymbols.RemoveAt(0);
                 Destroy(firstSymbol.gameObject);
 
-	            if (TimelineActivated != null)
+	            if (HitSymbol != null)
 	            {
-	                TimelineActivated();
+	                HitSymbol();
 	            }
 	        }
-	        
 	    }
 	}
 }

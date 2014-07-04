@@ -20,6 +20,9 @@ public class TimingManager : MonoBehaviour
     private float currentSpawnTime = 0;
     private bool isPlaying = false;
 
+    private int missedSymbols = 0;
+    private int hitSymbols = 0;
+
     public void PlaySequence(TimelineSequence sequence)
     {
         isPlaying = true;
@@ -27,6 +30,8 @@ public class TimingManager : MonoBehaviour
         currentSpawnTime = 0;
         CurrentSequence = sequence;
         CurrentSequence.StartPlayback();
+        missedSymbols = 0;
+        hitSymbols = 0;
     }
 
     public void StopPlayback()
@@ -34,7 +39,15 @@ public class TimingManager : MonoBehaviour
         isPlaying = false;
         currentTime = 0;
         currentSpawnTime = 0;
+
+        if (CurrentSequence != null)
+        {
+            CurrentSequence.Restart();
+        }
+
         CurrentSequence = null;
+        missedSymbols = 0;
+        hitSymbols = 0;
     }
 
     public bool HasSequence()
@@ -47,7 +60,19 @@ public class TimingManager : MonoBehaviour
         for (int i = 0; i < timeLines.Length; i++)
         {
             timeLines[i].ActivateKey = activateKeys[i];
+            timeLines[i].HitSymbol += TimingManager_HitSymbol;
+            timeLines[i].MissedSymbol += TimingManager_MissedSymbol;
         }
+    }
+
+    void TimingManager_MissedSymbol()
+    {
+        missedSymbols++;
+    }
+
+    void TimingManager_HitSymbol()
+    {
+        hitSymbols++;
     }
 
 	private void Update () 
@@ -58,6 +83,12 @@ public class TimingManager : MonoBehaviour
             currentSpawnTime += Time.deltaTime;
             var triggeredRunes = CurrentSequence.AdvanceTimeTo(currentSpawnTime);
             SpawnRunes(triggeredRunes);
+
+	        if (currentSpawnTime > CurrentSequence.GetLength())
+	        {
+	            CurrentSequence.Restart();
+	            currentSpawnTime = 0;
+	        }
 	    }
 	}
 

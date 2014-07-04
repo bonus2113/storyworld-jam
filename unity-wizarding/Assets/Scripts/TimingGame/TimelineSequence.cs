@@ -18,10 +18,37 @@ public class TimelineSequence : ScriptableObject
 
     private int currentIndex = 0;
 
+    private bool wasSorted = false;
+
     public void StartPlayback()
     {
         currentIndex = 0;
-        Sequence = Sequence.OrderBy(s => s.Time).ToList();
+        if (!wasSorted)
+        {
+            Sequence = Sequence.OrderBy(s => s.Time).ToList();
+            wasSorted = true;
+        }
+    }
+
+    public void Restart()
+    {
+        currentIndex = 0;
+    }
+
+    public float GetLength()
+    {
+        if (Sequence.Count == 0)
+        {
+            return 0;
+        }
+
+        if (!wasSorted)
+        {
+            Sequence = Sequence.OrderBy(s => s.Time).ToList();
+            wasSorted = true;
+        }
+
+        return Sequence[Sequence.Count - 1].Time;
     }
 
     public List<SequencePoint> AdvanceTimeTo(float time)
