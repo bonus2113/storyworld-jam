@@ -21,6 +21,8 @@ public class SymbolManager : MonoBehaviour {
             Debug.LogWarning("No symbols in list");
             Destroy(this);
         }
+
+        InitialiseSymbols();
 	
 	}
 	
@@ -31,11 +33,17 @@ public class SymbolManager : MonoBehaviour {
 
     public void InitialiseSymbols()
     {
-        const int SymbolYOffset = 10;
+        const float SymbolYOffset = 2.5f;
+        Vector3 SymbolPosition = new Vector3(6.6f,1.0f,0);
 
         for(int i = 0; i < this.m_NumSymbols; i++)
         {
-
+            GameObject.Instantiate(this.m_SymbolList[i], SymbolPosition - i * SymbolYOffset * Vector3.up, Quaternion.identity);
         }
+    }
+
+    public void OnClick()
+    {
+        Debug.Log("Clickwd.");
     }
 }
