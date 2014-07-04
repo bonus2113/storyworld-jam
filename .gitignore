@@ -1,0 +1,6 @@
+/unity-wizarding/obj
+/unity-wizarding/Temp
+/unity-wizarding/*.csproj
+/unity-wizarding/*.sln
+/unity-wizarding/*.DotSettings
+/unity-wizarding/Library
