@@ -5,7 +5,12 @@ using UnityEngine;
 public class TimeLine : MonoBehaviour
 {
     #region Properties
+    public const float MAX_DIST = 1.5f;
+
     public event Action TimelineActivated;
+
+    [HideInInspector]
+    public KeyCode ActivateKey;
     #endregion
 
     #region Fields
@@ -16,31 +21,47 @@ public class TimeLine : MonoBehaviour
     private GameObject timelineBackground;
 
     [SerializeField]
-    private KeyCode activateKey;
+    private float spawnOffsetY;
 
     private List<TimeLineSymbol> activeSymbols = new List<TimeLineSymbol>();
     #endregion
 
     public void SpawnRune(RuneType type)
     {
-        var go = RunePrefabDatabase.Instance.GetData(type);
+        var go = (GameObject)GameObject.Instantiate(RunePrefabDatabase.Instance.GetData(type));
+        go.transform.parent = transform;
+        go.transform.localPosition = Vector2.up * spawnOffsetY;
+
+        var symbol = go.GetComponent<TimeLineSymbol>();
+        symbol.MissedSymbol += symbol_MissedSymbol;
+        activeSymbols.Add(symbol);
     }
 
-    // Use this for initialization
-	void Start () 
+    void symbol_MissedSymbol(TimeLineSymbol symbols)
     {
-	
-	}
+        activeSymbols.Remove(symbols);
+    }
 	
 	// Update is called once per frame
 	void Update () 
     {
-	    if (Input.GetKeyDown(activateKey))
+        if (activeSymbols.Count > 0 && Input.GetKeyDown(ActivateKey))
 	    {
-	        if (TimelineActivated != null)
+	        var firstSymbol = activeSymbols[0];
+	        float dist = firstSymbol.transform.localPosition.y;
+            float normDist = dist / MAX_DIST;
+
+	        if (normDist < 1.0f)
 	        {
-	            TimelineActivated();
+                activeSymbols.RemoveAt(0);
+                Destroy(firstSymbol.gameObject);
+
+	            if (TimelineActivated != null)
+	            {
+	                TimelineActivated();
+	            }
 	        }
+	        
 	    }
 	}
 }

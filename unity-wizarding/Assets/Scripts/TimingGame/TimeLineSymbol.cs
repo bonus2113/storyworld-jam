@@ -1,15 +1,23 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
 
-public class TimeLineSymbol : MonoBehaviour {
+public class TimeLineSymbol : MonoBehaviour
+{
+    public event Action<TimeLineSymbol> MissedSymbol;
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+    private const float SPEED = 3.0f;
+
+	private void Update () 
+    {
+	    transform.Translate(-Vector2.up *  Time.deltaTime * SPEED);
+	    if (transform.localPosition.y < 0)
+	    {
+	        if (MissedSymbol != null)
+	        {
+	            MissedSymbol(this);
+	        }
+            Destroy(gameObject);
+	    }
 	}
 }
