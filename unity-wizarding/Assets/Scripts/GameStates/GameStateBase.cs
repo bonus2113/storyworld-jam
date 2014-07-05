@@ -11,12 +11,14 @@ public class GameStateBase : MonoBehaviour
     public void EnterState()
     {
         IsActive = true;
+        Debug.Log("Entered Game State: " + Type.ToString());
         OnEnterState();
     }
 
     public void ExitState()
     {
         IsActive = false;
+        Debug.Log("Exited Game State: " + Type.ToString());
         OnExitState();
     }
 
