@@ -34,30 +34,40 @@ public class RitualGameManager : MonoBehaviour {
             Destroy(this);
         }
 
+        this.m_TargetRitualInfo = ScriptableObject.CreateInstance<RitualInfo>();
+
+        GameManager gameManager = GameObject.FindObjectOfType<GameManager>();
+        if (gameManager == null)
+        {
+            Debug.LogWarning("Null gameManager.");
+            Destroy(this);
+            return;
+        }
+
+        Debug.Log("Illness to cure: " + gameManager.ActiveModel.CurrentIllness.Name);
+
+        //symbol type - based on affected body part
+        this.m_TargetRitualInfo.SymbolType = (SymbolTypes.SymbolType) gameManager.ActiveModel.IllBodyPart;
+        this.m_TargetRitualInfo.SymbolPosition = new Vector2(Screen.width/2.0f + Screen.width / 8.0f, Screen.height / 2.0f);
+
+        this.m_TargetRitualInfo.CandlePositions = new List<Vector2>();
+
+        //candle configuration - based on illness
+        CandleConfigurations.CandleConfig canConfig = gameManager.ActiveModel.CurrentIllness.CandleConfig;
+
+        this.m_TargetRitualInfo.CandlePositions = CandleconfigurationHelper.GetCandlePositions(canConfig);
+
+        //convert relative normalised candle configuration positions to screen space
+        for (int i = 0; i < this.m_TargetRitualInfo.CandlePositions.Count; i++)
+        {
+            Vector2 candlePos = this.m_TargetRitualInfo.CandlePositions[i];
+            this.m_TargetRitualInfo.CandlePositions[i] = this.m_TargetRitualInfo.SymbolPosition + new Vector2(candlePos.x * MAX_CANDLE_DISTANCE_FROM_SYMBOL, candlePos.y * MAX_CANDLE_DISTANCE_FROM_SYMBOL);
+        }
+
+        this.DebugPrintTargetRitualInfo();
+
         if (b_Debug)
         {
-            this.m_TargetRitualInfo = ScriptableObject.CreateInstance<RitualInfo>();
-
-            //random symbol type
-            this.m_TargetRitualInfo.SymbolType = (SymbolTypes.SymbolType)Random.Range(0, System.Enum.GetValues(typeof(SymbolTypes.SymbolType)).Length); // random target symbol from symbol enum list
-            this.m_TargetRitualInfo.SymbolPosition = new Vector2(Screen.width/2.0f + Screen.width / 8.0f, Screen.height / 2.0f);
-
-            this.m_TargetRitualInfo.CandlePositions = new List<Vector2>();
-
-            //random candle configuration
-
-            CandleConfigurations.CandleConfig canConfig = (CandleConfigurations.CandleConfig)Random.Range(0, System.Enum.GetValues(typeof(CandleConfigurations.CandleConfig)).Length);
-
-            this.m_TargetRitualInfo.CandlePositions = CandleconfigurationHelper.GetCandlePositions(canConfig);
-
-            //convert relative normalised candle configuration positions to screen space
-            for (int i = 0; i < this.m_TargetRitualInfo.CandlePositions.Count; i++)
-            {
-                Vector2 candlePos = this.m_TargetRitualInfo.CandlePositions[i];
-                this.m_TargetRitualInfo.CandlePositions[i] = this.m_TargetRitualInfo.SymbolPosition + new Vector2(candlePos.x * MAX_CANDLE_DISTANCE_FROM_SYMBOL, candlePos.y * MAX_CANDLE_DISTANCE_FROM_SYMBOL);
-            }
-
-            this.DebugPrintTargetRitualInfo();
 
             this.m_SymbolManager.EnableDebug();
 
@@ -89,8 +99,8 @@ public class RitualGameManager : MonoBehaviour {
     private void DebugPrintTargetRitualInfo()
     {
         Debug.Log("TargetSymbolType: " + this.m_TargetRitualInfo.SymbolType);
-        Debug.Log("TargetSymbolPos: " + this.m_TargetRitualInfo.SymbolPosition);
-        Debug.Log("TargetCandleNum: " + this.m_TargetRitualInfo.CandlePositions.Count);
+        //Debug.Log("TargetSymbolPos: " + this.m_TargetRitualInfo.SymbolPosition);
+        //Debug.Log("TargetCandleNum: " + this.m_TargetRitualInfo.CandlePositions.Count);
 
         /*
         for (int i = 0; i < this.m_TargetRitualInfo.CandlePositions.Count; i++)
