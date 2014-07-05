@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class RitualGameState : GameStateBase 
+public class RitualGameState : GameStateBase
 {
+    [SerializeField] private GameObject gameplayRoot;
+
     public override GameStateType Type
     {
         get { return GameStateType.Ritual; }
@@ -11,11 +13,13 @@ public class RitualGameState : GameStateBase
     protected override void OnEnterState()
     {
         Camera.main.GetComponent<Animator>().SetTrigger("ZoomIn");
+        StartCoroutine(WaitForZoom());
     }
 
     protected override void OnExitState()
     {
         Camera.main.GetComponent<Animator>().SetTrigger("ZoomOut");
+        gameplayRoot.SetActive(false);
     }
 
     protected override void OnUpdate()
@@ -24,5 +28,11 @@ public class RitualGameState : GameStateBase
         {
             GameManager.GoTo(GameStateType.CastingSpell);
         }
+    }
+
+    private IEnumerator WaitForZoom()
+    {
+        yield return new WaitForSeconds(2.0f);
+        gameplayRoot.SetActive(true);
     }
 }

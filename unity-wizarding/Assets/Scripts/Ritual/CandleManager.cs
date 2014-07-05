@@ -41,7 +41,8 @@ public class CandleManager : MonoBehaviour {
     {
         Vector3 CandlePosition = new Vector3(6.6f, 3.0f, 0);
 
-        GameObject.Instantiate(Candle, CandlePosition, Quaternion.identity);
+        var candle = (GameObject)GameObject.Instantiate(Candle, CandlePosition, Quaternion.identity);
+        candle.transform.parent = transform;
     }
 
 	// Update is called once per frame
@@ -79,6 +80,7 @@ public class CandleManager : MonoBehaviour {
             candleDebug = (GameObject)GameObject.Instantiate(this.m_DebugGraphic, debugSymbolWorldPos, Quaternion.identity);
             candleDebug.GetComponent<SpriteRenderer>().sortingOrder = 1;
             candleDebug.GetComponent<SpriteRenderer>().color = Color.yellow;
+            candleDebug.transform.parent = transform;
         }
     }
 }

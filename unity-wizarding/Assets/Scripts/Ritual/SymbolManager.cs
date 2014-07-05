@@ -54,7 +54,8 @@ public class SymbolManager : MonoBehaviour {
 
         for(int i = 0; i < this.m_NumSymbols; i++)
         {
-            GameObject.Instantiate(this.m_SymbolList[i], SymbolPosition - i * SymbolYOffset * Vector3.up, Quaternion.identity);
+            var symbol = (Symbol)GameObject.Instantiate(this.m_SymbolList[i], SymbolPosition - i * SymbolYOffset * Vector3.up, Quaternion.identity);
+            symbol.transform.parent = transform;
         }
     }
 
@@ -67,6 +68,7 @@ public class SymbolManager : MonoBehaviour {
         this.m_SymbolDebug = (GameObject)GameObject.Instantiate(this.m_DebugGraphic, debugSymbolWorldPos, Quaternion.identity);
         this.m_SymbolDebug.GetComponent<SpriteRenderer>().sortingOrder = 1;
         this.m_SymbolDebug.GetComponent<SpriteRenderer>().color = Color.white;
+        this.m_SymbolDebug.transform.parent = transform;
     }
 
     public void UpdateSymbolPositionAndType(SymbolTypes.SymbolType type, Vector2 pos)

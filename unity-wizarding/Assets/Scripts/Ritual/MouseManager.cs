@@ -65,6 +65,7 @@ public class MouseManager : MonoBehaviour {
                 Vector3 candleWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 candleWorldPos.z = 0.0f;
                 this.m_ActiveCandle.transform.position = candleWorldPos;
+                this.m_ActiveCandle.transform.parent = transform;
                 this.b_MouseDrag = true;
                 this.b_CandleActive = true;
 
@@ -113,6 +114,7 @@ public class MouseManager : MonoBehaviour {
                 if (this.m_ActiveSymbol == null)
                 {
                     this.m_ActiveSymbol = ((GameObject)GameObject.Instantiate(hitSymbol.gameObject)).GetComponent<Symbol>();
+                    this.m_ActiveSymbol.transform.parent = transform;
                 }
 
                 Vector3 symbolWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
