@@ -13,4 +13,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 2
   Name: Arms
-  RuneIcon: {fileID: 2800000, guid: 7264846d82a63df408ed8b8ca1699117, type: 3}
+  RuneIcon: {fileID: 2800000, guid: 5153bc64fc109b5418ca3e759db996ff, type: 3}
