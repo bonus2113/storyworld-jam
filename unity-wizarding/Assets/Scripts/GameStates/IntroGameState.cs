@@ -33,7 +33,8 @@ public class IntroGameState : GameStateBase
     private void CreateVillager()
     {
         GameManager.ActiveModel.CurrentIllness = illnessContainer.GetRandomIllness();
-        villager.SetIllness(GameManager.ActiveModel.CurrentIllness, GetRandomBodyPartType());
+        GameManager.ActiveModel.IllBodyPart = GetRandomBodyPartType();
+        villager.SetIllness(GameManager.ActiveModel.CurrentIllness, GameManager.ActiveModel.IllBodyPart);
         villager.StartMove(OnIntroFinished);
     }
 
