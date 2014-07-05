@@ -11,6 +11,7 @@ GameObject:
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400000}
   - 114: {fileID: 11400004}
+  - 114: {fileID: 11400006}
   m_Layer: 0
   m_Name: RitualGameManager
   m_TagString: Untagged
@@ -40,7 +41,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c788955fd11fed45b31971225ac2f7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SymbolTarget: {x: 0, y: 0}
+  m_DebugGraphic: {fileID: 100000, guid: 64b1907638267fd40a44c7d290637c41, type: 2}
+  m_SymbolTargetPosition: {x: 0, y: 0}
   m_SymbolList:
   - {fileID: 11400000, guid: 7a74615c40607664b88a18929ee1ffc5, type: 2}
   - {fileID: 11400000, guid: b575609bb6bc26b46bc030067291de53, type: 2}
@@ -56,6 +58,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a36d56ebc5fe1f940b8783eaaa5fc90d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  b_Debug: 1
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -67,8 +70,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e847d9605104bb408e9af97a1116429, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  b_Debug: 0
-  b_SymbolActive: 0
+--- !u!114 &11400006
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a498cae098e83a049afd587be49368bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Candle: {fileID: 100000, guid: a4a7a83df5949c0499287349a0bc441d, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
