@@ -13,4 +13,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 3
   Name: Legs
-  RuneIcon: {fileID: 2800000, guid: cf14eaf2e062b3c48af073fc5b342fe0, type: 3}
+  RuneIcon: {fileID: 2800000, guid: 2b289f289321d25499629ef4aed5b6d5, type: 3}

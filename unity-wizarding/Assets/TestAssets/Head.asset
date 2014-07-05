@@ -13,4 +13,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 0
   Name: Head
-  RuneIcon: {fileID: 2800000, guid: 62f839c632631b74082798c474e0bc33, type: 3}
+  RuneIcon: {fileID: 2800000, guid: 83d71f9defb0dd5449a4827b6f3179e6, type: 3}
