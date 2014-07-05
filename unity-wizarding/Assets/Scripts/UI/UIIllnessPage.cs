@@ -9,10 +9,9 @@ public class UIIllnessPage : MonoBehaviour
     private UILabel illnessNameLabel;
     [SerializeField]
     private UILabel illnessDescLabel;
-    [SerializeField]
-    private UITexture illnessIconTexture;
 
     [SerializeField] private GameObject candlePrefab;
+    [SerializeField] private GameObject candleRoot;
 
     public void SetIllness(Illness illness)
     {
@@ -25,12 +24,15 @@ public class UIIllnessPage : MonoBehaviour
     {
         foreach (var position in positions)
         {
-            
+            InitCandle(position);
         }
     }
 
-    private void InitCandle()
+    private void InitCandle(Vector2 pos)
     {
-        
+        var candleObj = (GameObject) GameObject.Instantiate(candlePrefab);
+        candleObj.transform.parent = candleRoot.transform;
+        candleObj.transform.localPosition = pos*100;
+        candleObj.transform.localScale = candleObj.transform.localScale * 0.1f;
     }
 }

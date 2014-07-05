@@ -85,7 +85,7 @@ GameObject:
   - 114: {fileID: 71783386}
   - 114: {fileID: 71783385}
   - 54: {fileID: 71783384}
-  m_Layer: 11
+  m_Layer: 5
   m_Name: UI Root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -208,7 +208,7 @@ Transform:
   - {fileID: 1933302607}
   - {fileID: 1948016165}
   m_Father: {fileID: 1392163651}
-  m_RootOrder: 3
+  m_RootOrder: 1
 --- !u!114 &102089956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -508,7 +508,7 @@ Transform:
   - {fileID: 1630278211}
   - {fileID: 398334994}
   m_Father: {fileID: 1392163651}
-  m_RootOrder: 2
+  m_RootOrder: 0
 --- !u!114 &521112021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -536,7 +536,7 @@ GameObject:
   - 114: {fileID: 542914233}
   - 114: {fileID: 542914232}
   - 65: {fileID: 542914231}
-  m_Layer: 11
+  m_Layer: 5
   m_Name: IllnessesTab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -665,7 +665,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 553708575}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.0131340027, y: .0239505768, z: 0}
+  m_LocalPosition: {x: -.0038164854, y: .0332727432, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1921044593}
@@ -737,7 +737,7 @@ Transform:
   - {fileID: 852757034}
   - {fileID: 1201990994}
   m_Father: {fileID: 1392163651}
-  m_RootOrder: 1
+  m_RootOrder: 3
 --- !u!1 &632348906
 GameObject:
   m_ObjectHideFlags: 0
@@ -1271,7 +1271,7 @@ GameObject:
   - 114: {fileID: 954447885}
   - 114: {fileID: 954447889}
   - 114: {fileID: 954447890}
-  m_Layer: 11
+  m_Layer: 5
   m_Name: Spellbook
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1464,7 +1464,7 @@ Transform:
   - {fileID: 1933038058}
   - {fileID: 879900606}
   m_Father: {fileID: 1392163651}
-  m_RootOrder: 0
+  m_RootOrder: 2
 --- !u!114 &992091792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1717,7 +1717,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294965247
+    m_Bits: 4294965215
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -1867,7 +1867,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1315142909}
   - 114: {fileID: 1315142910}
-  m_Layer: 11
+  m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1944,7 +1944,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1326498270}
   - 114: {fileID: 1326498269}
-  m_Layer: 11
+  m_Layer: 5
   m_Name: Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2051,10 +2051,10 @@ Transform:
   m_LocalPosition: {x: -4.03389978, y: -2.30355525, z: 0}
   m_LocalScale: {x: .400000006, y: .400000006, z: 1}
   m_Children:
-  - {fileID: 992091791}
-  - {fileID: 601497601}
   - {fileID: 521112020}
   - {fileID: 102089955}
+  - {fileID: 992091791}
+  - {fileID: 601497601}
   m_Father: {fileID: 275555694}
   m_RootOrder: 0
 --- !u!114 &1392163652
@@ -2101,7 +2101,7 @@ GameObject:
   - 114: {fileID: 1412280834}
   - 114: {fileID: 1412280833}
   - 65: {fileID: 1412280832}
-  m_Layer: 11
+  m_Layer: 5
   m_Name: BodyPartsTab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2216,7 +2216,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1477919577}
   - 114: {fileID: 1477919578}
-  m_Layer: 11
+  m_Layer: 5
   m_Name: SpellStateLabel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2670,7 +2670,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1648445161}
   - 114: {fileID: 1648445162}
-  m_Layer: 11
+  m_Layer: 5
   m_Name: Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2891,7 +2891,7 @@ GameObject:
   - 114: {fileID: 1755062262}
   - 114: {fileID: 1755062261}
   - 65: {fileID: 1755062260}
-  m_Layer: 11
+  m_Layer: 5
   m_Name: PrevButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3057,7 +3057,7 @@ GameObject:
   - 114: {fileID: 1886451633}
   - 114: {fileID: 1886451635}
   - 65: {fileID: 1886451636}
-  m_Layer: 11
+  m_Layer: 5
   m_Name: SpellbookButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3173,7 +3173,7 @@ GameObject:
   - 114: {fileID: 1895108350}
   - 114: {fileID: 1895108349}
   - 65: {fileID: 1895108348}
-  m_Layer: 11
+  m_Layer: 5
   m_Name: NextButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3584,7 +3584,7 @@ GameObject:
   - 4: {fileID: 2033753636}
   - 20: {fileID: 2033753635}
   - 114: {fileID: 2033753634}
-  m_Layer: 11
+  m_Layer: 5
   m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3650,7 +3650,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 2048
+    m_Bits: 32
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
