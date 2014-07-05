@@ -6,8 +6,12 @@ using System.Collections;
 
 public class RitualInfo : ScriptableObject
 {
-    public const float MAX_SYMBOL_DISTANCE = 1.0f;
-    public const float MAX_CANDLE_DISTANCE = 0.5f;
+    //these are in pixels now DARIO
+    public const float MAX_SYMBOL_DISTANCE = 10.0f;
+    public const float MAX_CANDLE_DISTANCE = 30.0f;
+
+    //penalty candle deficit/excess
+    public const float PENALTY_PER_CANDLE = 0.2f;
 
     [MenuItem("Assets/Create/Ritual Information")]
     public static void Create()
@@ -17,7 +21,7 @@ public class RitualInfo : ScriptableObject
 
     public Vector2 SymbolPosition;
     public SymbolTypes.SymbolType SymbolType;
-    public List<Vector2> CandlePositions;
+    public List<Vector2> CandlePositions = new List<Vector2>();
 
     public float GetHeuristicValue(RitualInfo compareInfo)
     {
@@ -31,6 +35,10 @@ public class RitualInfo : ScriptableObject
     {
         var matchCandles = new List<Vector2>(CandlePositions);
         var heuristicValues = new List<float>();
+
+        //penalty if not 0
+        int candleDifference = Mathf.Abs(compPositions.Count - matchCandles.Count);
+
         for (int i = matchCandles.Count - 1; i >= 0 && compPositions.Count > 0; i--)
         {
             Vector2 currentMatch = matchCandles[i];
@@ -41,7 +49,7 @@ public class RitualInfo : ScriptableObject
             compPositions.RemoveAt(closestIndex);
         }
 
-        return heuristicValues.Average();
+        return Mathf.Clamp01(heuristicValues.Average() - PENALTY_PER_CANDLE * candleDifference);
     }
 
     private int FindClosest(Vector2 matchPos, List<Vector2> compPositions)

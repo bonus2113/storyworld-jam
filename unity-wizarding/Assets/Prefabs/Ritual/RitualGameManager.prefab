@@ -43,7 +43,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_DebugGraphic: {fileID: 100000, guid: 64b1907638267fd40a44c7d290637c41, type: 2}
-  m_SymbolTargetPosition: {x: 0, y: 0}
   m_SymbolList:
   - {fileID: 11400000, guid: 7a74615c40607664b88a18929ee1ffc5, type: 2}
   - {fileID: 11400000, guid: b575609bb6bc26b46bc030067291de53, type: 2}
@@ -59,6 +58,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a36d56ebc5fe1f940b8783eaaa5fc90d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_TargetRitualInfo: {fileID: 0}
   b_Debug: 1
 --- !u!114 &11400004
 MonoBehaviour:
@@ -83,6 +83,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Candle: {fileID: 100000, guid: a4a7a83df5949c0499287349a0bc441d, type: 2}
+  m_DebugGraphic: {fileID: 100000, guid: 64b1907638267fd40a44c7d290637c41, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

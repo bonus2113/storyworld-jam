@@ -136,14 +136,13 @@ public class MouseManager : MonoBehaviour {
                 Vector3 symbolWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 symbolWorldPos.z = 0.0f;
                 this.m_ActiveSymbol.transform.position = symbolWorldPos;
-
-                this.m_SymbolManager.UpdateSymbolPositionAndType(this.m_ActiveSymbol.SymbolType, symbolWorldPos);
             }
         }
         else if (Input.GetMouseButtonUp(0) && this.b_SymbolActive)
         {
             this.b_MouseDrag = false;
             this.b_SymbolActive = false;
+            this.m_SymbolManager.UpdateSymbolPositionAndType(this.m_ActiveSymbol.SymbolType, Input.mousePosition);
         }
     }
 }
