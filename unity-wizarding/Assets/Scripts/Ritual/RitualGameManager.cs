@@ -5,6 +5,8 @@ public class RitualGameManager : MonoBehaviour {
 
     private SymbolManager m_SymbolManager = null;
 
+    public bool b_Debug = false;
+
 	// Use this for initialization
 	void Start () {
 
@@ -14,7 +16,11 @@ public class RitualGameManager : MonoBehaviour {
             Debug.LogWarning("No symbolManager found!.");
             Destroy(this);
         }
-	
+
+        if (b_Debug)
+        {
+            this.m_SymbolManager.EnableDebug();
+        }
 	}
 	
 	// Update is called once per frame

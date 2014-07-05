@@ -4,7 +4,16 @@ using System.Collections;
 public class Symbol : MonoBehaviour {
 
     [SerializeField]
-    private int SymbolID = 0;
+    private SymbolTypes.SymbolType m_Type = SymbolTypes.SymbolType.Symbol0;
+
+
+    public SymbolTypes.SymbolType SymbolType
+    {
+        get
+        {
+            return this.m_Type;
+        }
+    }
 
 	// Use this for initialization
 	void Start () {
