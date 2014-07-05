@@ -3,8 +3,12 @@ using System.Collections;
 
 public class CastingGameState : GameStateBase
 {
-    [SerializeField] private float successfulThreshold = 0.5f;
-    [SerializeField] private UILabel spellLabel;
+    [SerializeField]
+    private TimingManager timingManager;
+    [SerializeField]
+    private GameObject overlayLight;
+
+    private float timer = 0;
 
     public override GameStateType Type
     {
@@ -14,38 +18,32 @@ public class CastingGameState : GameStateBase
     protected override void OnEnterState()
     {
         StartCoroutine(WaitForZoom());
+        overlayLight.GetComponent<Animator>().SetTrigger("FadeOut");
     }
 
-    private IEnumerator WaitForZoom()
+    protected override void OnExitState()
     {
-        yield return new WaitForSeconds(2.0f);
-        spellLabel.gameObject.SetActive(true);
-        if (GameManager.ActiveModel.SpellHeuristicValue > successfulThreshold)
-        {
-            SpellSuccessful();
-        }
-        else
-        {
-            SpellFailed();
-        }
-    }
-
-    private void SpellSuccessful()
-    {
-        spellLabel.text = "SPELL SUCCESSFUL!";
-    }
-
-    private void SpellFailed()
-    {
-        spellLabel.text = "SPELL FAILED!";
+        overlayLight.GetComponent<Animator>().SetTrigger("FadeIn");
+        timingManager.GetComponent<UIPlayTween>().Play(false);
+        GameManager.ActiveModel.SpellHeuristicValue += timingManager.GetHeuristicValue();
+        timingManager.StopPlayback();
     }
 
     protected override void OnUpdate()
     {
         base.OnUpdate();
-        if (Input.GetKeyDown(KeyCode.Return))
+        timer += Time.deltaTime;
+        if (timer > 5)
         {
-            Application.LoadLevel(Application.loadedLevel);
+            GameManager.GoTo(GameStateType.ShowResult);
         }
+    }
+
+    private IEnumerator WaitForZoom()
+    {
+        yield return new WaitForSeconds(1.0f);
+        timingManager.gameObject.SetActive(true);
+        timingManager.GetComponent<UIPlayTween>().Play(true);
+        timingManager.PlaySequence(GameManager.ActiveModel.CurrentIllness.Sequence);
     }
 }

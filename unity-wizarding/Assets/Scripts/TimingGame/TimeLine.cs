@@ -35,11 +35,6 @@ public class TimeLine : MonoBehaviour
 
         var symbol = go.GetComponent<TimeLineSymbol>();
         symbol.MissedSymbol += symbol_MissedSymbol;
-        if (MissedSymbol != null)
-        {
-            MissedSymbol();
-        }
-
         activeSymbols.Add(symbol);
     }
 

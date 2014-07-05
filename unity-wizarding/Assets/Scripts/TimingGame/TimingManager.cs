@@ -57,7 +57,9 @@ public class TimingManager : MonoBehaviour
 
     public float GetHeuristicValue()
     {
-        return -missedSymbols*0.05f;
+        var val = -missedSymbols*0.05f;
+        Debug.Log("WizardHero heuristic value: " + val);
+        return val;
     }
 
     private void Start()
