@@ -49,7 +49,7 @@ public class SymbolManager : MonoBehaviour {
 
     public void InitialiseSymbols()
     {
-        float SymbolYOffset = Screen.height/6.0f;
+        float SymbolYOffset = Screen.height/5.3f;
         Vector3 SymbolPosition = new Vector3(Screen.width - Screen.width/8.0f,Screen.height - Screen.height/3.0f,0);
 
         for(int i = 0; i < this.m_NumSymbols; i++)
