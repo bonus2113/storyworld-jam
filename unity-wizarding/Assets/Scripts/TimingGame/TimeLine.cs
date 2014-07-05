@@ -69,6 +69,13 @@ public class TimeLine : MonoBehaviour
 	                HitSymbol();
 	            }
 	        }
+	        else
+	        {
+	            if (MissedSymbol != null)
+	            {
+	                MissedSymbol();
+	            }
+	        }
 	    }
 	}
 }
