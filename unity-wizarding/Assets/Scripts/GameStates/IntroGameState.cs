@@ -11,6 +11,8 @@ public class IntroGameState : GameStateBase
     private IllnessContainer illnessContainer;
     private Villager villager;
 
+    [SerializeField] private Collider2D workingAreaCollider;
+
     protected override void OnAwake()
     {
         illnessContainer = FindObjectOfType<IllnessContainer>();
@@ -20,11 +22,12 @@ public class IntroGameState : GameStateBase
     protected override void OnEnterState()
     {
         CreateVillager();
+        workingAreaCollider.enabled = false;
     }
 
     protected override void OnExitState()
     {
-
+        workingAreaCollider.enabled = true;
     }
 
     private void CreateVillager()

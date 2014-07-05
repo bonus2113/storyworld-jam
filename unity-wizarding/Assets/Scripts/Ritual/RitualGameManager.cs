@@ -66,6 +66,15 @@ public class RitualGameManager : MonoBehaviour {
 
 	}
 
+    public float GetHeuristicValue()
+    {
+        //get candle pos
+        this.m_CurrentRitualInfo.CandlePositions = this.m_CandleManager.GetCandlePositionsList();
+        var val = this.m_TargetRitualInfo.GetHeuristicValue(this.m_CurrentRitualInfo);
+        Debug.Log("Ritual heuristic value: " + val);
+        return val;
+    }
+
     public void SetTargetRitual(RitualInfo target)
     {
         this.m_TargetRitualInfo = target;
@@ -90,29 +99,4 @@ public class RitualGameManager : MonoBehaviour {
         }
          * */
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        //cast spell
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            //get candle pos
-            this.m_CurrentRitualInfo.CandlePositions = this.m_CandleManager.GetCandlePositionsList();
-
-            //change game state here
-
-
-            //debug print
-            /*
-            for (int i = 0; i < this.m_CurrentRitualInfo.CandlePositions.Count; i++)
-            {
-                Debug.Log("Candle"+i+" position: "+this.m_CurrentRitualInfo.CandlePositions[i]);
-            }
-             * */
-
-            Debug.Log("Heuristic value: " + this.m_TargetRitualInfo.GetHeuristicValue(this.m_CurrentRitualInfo));
-
-        }
-	}
 }

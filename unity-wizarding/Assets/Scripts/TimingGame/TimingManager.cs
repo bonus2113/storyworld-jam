@@ -55,6 +55,11 @@ public class TimingManager : MonoBehaviour
         return CurrentSequence != null;
     }
 
+    public float GetHeuristicValue()
+    {
+        return -missedSymbols*0.05f;
+    }
+
     private void Start()
     {
         for (int i = 0; i < timeLines.Length; i++)

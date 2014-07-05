@@ -18,3 +18,4 @@ MonoBehaviour:
   BodyPrefab: {fileID: 0}
   LegPrefab: {fileID: 0}
   CuringSpell: {fileID: 11400000, guid: cda0c5809da686a4a9009aa46947c334, type: 2}
+  Sequence: {fileID: 11400000, guid: 589ffc27a34609146bcafc84d41d705c, type: 2}

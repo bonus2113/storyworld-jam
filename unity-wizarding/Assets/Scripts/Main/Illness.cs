@@ -20,4 +20,5 @@ public class Illness : ScriptableObject
     public GameObject LegPrefab;
 
     public Spell CuringSpell;
+    public TimelineSequence Sequence;
 }

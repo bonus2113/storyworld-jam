@@ -6,7 +6,7 @@ public class TimeLineSymbol : MonoBehaviour
 {
     public event Action<TimeLineSymbol> MissedSymbol;
 
-    private const float SPEED = 3.0f;
+    private const float SPEED = 1.0f;
 
 	private void Update () 
     {
