@@ -17,6 +17,8 @@ public class Villager : MonoBehaviour
     private GameObject m_BodyObject;
     private GameObject m_LegsObject;
 
+    private Animator anim;
+
     void Start()
     {
         m_HeadObject = (GameObject)GameObject.Instantiate(this.m_NormalHeads[UnityEngine.Random.Range(0, this.m_NormalHeads.Count)]);
@@ -86,6 +88,7 @@ public class Villager : MonoBehaviour
     public void StartMove(Action callback)
     {
         introEndCallback = callback;
+        anim.Play("VillagerIntro");
     }
 
     public void OnIntroEnd()
@@ -95,5 +98,6 @@ public class Villager : MonoBehaviour
 
     private void Awake()
     {
+        anim = GetComponent<Animator>();
     }
 }

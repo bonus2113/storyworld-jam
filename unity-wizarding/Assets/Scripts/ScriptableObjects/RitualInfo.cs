@@ -1,8 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using UnityEditor;
 using UnityEngine;
-using System.Collections;
 
 public class RitualInfo : ScriptableObject
 {
@@ -12,12 +10,6 @@ public class RitualInfo : ScriptableObject
 
     //penalty candle deficit/excess
     public const float PENALTY_PER_CANDLE = 0.2f;
-
-    [MenuItem("Assets/Create/Ritual Information")]
-    public static void Create()
-    {
-        AssetUtils.CreateAsset(typeof(RitualInfo), "RitualInfo", "Assets/RitualInfo.asset", true);
-    }
 
     public Vector2 SymbolPosition;
     public SymbolTypes.SymbolType SymbolType;

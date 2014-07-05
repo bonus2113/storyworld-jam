@@ -1,18 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
-using UnityEditor;
 using UnityEngine;
-using System.Collections;
 
 public class TimelineSequence : ScriptableObject
 {
-    [MenuItem("Assets/Create/Timeline Sequence")]
-    public static void Create()
-    {
-        AssetUtils.CreateAsset(typeof(TimelineSequence), "timelineSequence", "Assets/timelineSequence.asset", true);
-    }
-
     [SerializeField]
     private List<SequencePoint> Sequence;
 

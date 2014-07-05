@@ -5,6 +5,36 @@ using System.IO;
 
 public class AssetUtils : MonoBehaviour 
 {
+    [MenuItem("Assets/Create/Timeline Sequence")]
+    public static void CreateTimelineSequence()
+    {
+        AssetUtils.CreateAsset(typeof(TimelineSequence), "timelineSequence", "Assets/timelineSequence.asset", true);
+    }
+
+    [MenuItem("Assets/Create/Spellbook")]
+    public static void CreateSpellbook()
+    {
+        AssetUtils.CreateAsset(typeof(SpellBookInfo), "Spellbook", "Assets/Spellbook.asset", true);
+    }
+
+    [MenuItem("Assets/Create/Ritual Information")]
+    public static void CreateRitual()
+    {
+        AssetUtils.CreateAsset(typeof(RitualInfo), "RitualInfo", "Assets/RitualInfo.asset", true);
+    }
+
+    [MenuItem("Assets/Create/Spell")]
+    public static void CreateSpell()
+    {
+        AssetUtils.CreateAsset(typeof(Spell), "Spell", "Assets/Spell.asset", true);
+    }
+
+    [MenuItem("Assets/Create/Illness")]
+    public static void CreateIllness()
+    {
+        AssetUtils.CreateAsset(typeof(Illness), "Illness", "Assets/Illness.asset", true);
+    }
+
     /// <summary> will create the asset file if it does not exist and add the object and save the file</summary>
     public static void AddObjectToAssetFile(Object obj, string assetFile)
     {
