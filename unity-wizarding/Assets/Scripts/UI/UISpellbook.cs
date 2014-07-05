@@ -4,17 +4,28 @@ using System.Collections;
 
 public class UISpellbook : MonoBehaviour
 {
-    [SerializeField] private SpellBookInfo spellBook;
+    private enum TabMode
+    {
+        Illnesses,
+        BodyParts
+    }
 
-    [SerializeField] private GameObject spellPagePrefab;
+    [SerializeField] private GameObject illnessPagePrefab;
+    [SerializeField] private GameObject bodyPartPagePrefab;
 
-    private List<UISpellPage> spellPages = new List<UISpellPage>();
+    private List<UIIllnessPage> illnessPages = new List<UIIllnessPage>();
+    private List<UIBodyPartPage> bodyPartPages = new List<UIBodyPartPage>();
+
+    private IllnessContainer illnessContainer;
 
     private UIPlayTween tween;
 
     private bool isShown = false;
 
-    private int activePage = 0;
+    private int activeIllnessPage = 0;
+    private int activeBodyPartPage = 0;
+
+    private TabMode activeMode = TabMode.Illnesses;
 
     public void Toggle()
     {
@@ -40,51 +51,117 @@ public class UISpellbook : MonoBehaviour
         isShown = false;
     }
 
+    public void SetModeBodyParts()
+    {
+        illnessPages.ForEach(page => page.gameObject.SetActive(false));
+        SetActiveBodyPartPage(activeBodyPartPage);
+        activeMode = TabMode.BodyParts;
+    }
+
+    public void SetModeIllnesses()
+    {
+        bodyPartPages.ForEach(page => page.gameObject.SetActive(false));
+        SetActiveIllnessPage(activeIllnessPage);
+        activeMode = TabMode.Illnesses;
+    }
+
     public void ShowNextSpell()
     {
-        if (activePage < spellPages.Count - 1)
+        switch (activeMode)
         {
-            SetActivePage(activePage + 1);
+            case TabMode.BodyParts:
+                if (activeBodyPartPage < bodyPartPages.Count - 1)
+                {
+                    SetActiveBodyPartPage(activeBodyPartPage + 1);
+                }
+                break;
+
+            case TabMode.Illnesses:
+                if (activeIllnessPage < illnessPages.Count - 1)
+                {
+                    SetActiveIllnessPage(activeIllnessPage + 1);
+                }
+                break;
         }
+        
     }
 
     public void ShowPrevSpell()
     {
-        if (activePage > 0)
+        switch (activeMode)
         {
-            SetActivePage(activePage - 1);
+            case TabMode.BodyParts:
+                if (activeBodyPartPage > 0)
+                {
+                    SetActiveBodyPartPage(activeBodyPartPage - 1);
+                }
+                break;
+
+            case TabMode.Illnesses:
+                if (activeIllnessPage > 0)
+                {
+                    SetActiveIllnessPage(activeIllnessPage - 1);
+                }
+                break;
         }
     }
 
-	private void Start () 
-    {
-	    foreach (var spell in spellBook.Spells)
+	private void Start ()
+	{
+	    illnessContainer = FindObjectOfType<IllnessContainer>();
+        foreach (var illness in illnessContainer.GetIllnesses())
 	    {
-	        CreatePage(spell);
+            CreateIllnessPage(illness);
+	    }
+
+	    for (int i = 0; i < (int)BodyPartType.ENUM_COUNT; i++)
+	    {
+	        CreateBodyPartPage((BodyPartType)i);    
 	    }
 
 	    tween = GetComponent<UIPlayTween>();
-        SetActivePage(0);
+        SetActiveIllnessPage(0);
+        SetActiveBodyPartPage(0);
+        SetModeIllnesses();
     }
 
-    private void SetActivePage(int index)
+    private void SetActiveBodyPartPage(int index)
     {
-        spellPages[activePage].gameObject.SetActive(false);
-        spellPages[index].gameObject.SetActive(true);
-        activePage = index;
+        bodyPartPages[activeBodyPartPage].gameObject.SetActive(false);
+        bodyPartPages[index].gameObject.SetActive(true);
+        activeBodyPartPage = index;
     }
 
-    private void CreatePage(Spell spell)
+    private void SetActiveIllnessPage(int index)
     {
-        var pageGo = (GameObject) GameObject.Instantiate(spellPagePrefab);
+        illnessPages[activeIllnessPage].gameObject.SetActive(false);
+        illnessPages[index].gameObject.SetActive(true);
+        activeIllnessPage = index;
+    }
+
+    private void CreateIllnessPage(Illness illness)
+    {
+        var pageGo = (GameObject) GameObject.Instantiate(illnessPagePrefab);
         pageGo.transform.parent = transform;
         pageGo.transform.localPosition = Vector2.zero;
         pageGo.transform.localScale = Vector3.one;
         pageGo.SetActive(false);
 
-        var spellpage = pageGo.GetComponent<UISpellPage>();
-        spellpage.SetSpell(spell);
+        var illnessPage = pageGo.GetComponent<UIIllnessPage>();
+        illnessPage.SetIllness(illness);
+        illnessPages.Add(illnessPage);
+    }
 
-        spellPages.Add(spellpage);
+    private void CreateBodyPartPage(BodyPartType bodyPart)
+    {
+        var pageGo = (GameObject)GameObject.Instantiate(bodyPartPagePrefab);
+        pageGo.transform.parent = transform;
+        pageGo.transform.localPosition = Vector2.zero;
+        pageGo.transform.localScale = Vector3.one;
+        pageGo.SetActive(false);
+
+        var bodyPartPage = pageGo.GetComponent<UIBodyPartPage>();
+        bodyPartPage.SetBodyPart(bodyPart);
+        bodyPartPages.Add(bodyPartPage);
     }
 }

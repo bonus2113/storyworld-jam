@@ -12,7 +12,6 @@ public class Illness : ScriptableObject
     public GameObject BodyPrefab;
     public GameObject LegPrefab;
 
-    public Spell CuringSpell;
     public TimelineSequence Sequence;
     public CandleConfigurations.CandleConfig CandleConfig;
 }

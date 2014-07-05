@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 400000}
   - 114: {fileID: 11400000}
   m_Layer: 11
-  m_Name: SpellIllustration
+  m_Name: IllnessIllustration
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,7 +26,7 @@ GameObject:
   - 4: {fileID: 400002}
   - 114: {fileID: 11400002}
   m_Layer: 11
-  m_Name: SpellDescLabel
+  m_Name: IllnessDescLabel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42,7 +42,7 @@ GameObject:
   - 4: {fileID: 400004}
   - 114: {fileID: 11400004}
   m_Layer: 11
-  m_Name: SpellNameLabel
+  m_Name: IllnessNameLabel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59,7 +59,7 @@ GameObject:
   - 114: {fileID: 11400008}
   - 114: {fileID: 11400006}
   m_Layer: 11
-  m_Name: SpellPage
+  m_Name: IllnessPage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -259,7 +259,7 @@ MonoBehaviour:
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 6.36666679
+  aspectRatio: 6.26666689
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
   mFont: {fileID: 0}
@@ -293,12 +293,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 100006}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad55194e8440baa4189cb212c765730f, type: 3}
+  m_Script: {fileID: 11500000, guid: b017dcffe179a2e4289bd66928664c65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellNameLabel: {fileID: 11400004}
-  spellDescLabel: {fileID: 11400002}
-  spellIconTexture: {fileID: 11400000}
+  illnessNameLabel: {fileID: 11400004}
+  illnessDescLabel: {fileID: 11400002}
+  illnessIconTexture: {fileID: 0}
+  candlePrefab: {fileID: 0}
 --- !u!114 &11400008
 MonoBehaviour:
   m_ObjectHideFlags: 1

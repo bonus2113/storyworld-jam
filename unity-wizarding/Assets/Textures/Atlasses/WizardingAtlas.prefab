@@ -56,7 +56,7 @@ MonoBehaviour:
     paddingBottom: 0
   - name: spellbookArrow
     x: 148
-    y: 221
+    y: 120
     width: 88
     height: 54
     borderLeft: 0
@@ -93,6 +93,19 @@ MonoBehaviour:
     paddingRight: 26
     paddingTop: 18
     paddingBottom: 14
+  - name: tab
+    x: 148
+    y: 175
+    width: 200
+    height: 100
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
   mPixelSize: 1
   mReplacement: {fileID: 0}
   mCoordinates: 0

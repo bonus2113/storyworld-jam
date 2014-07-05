@@ -5,28 +5,22 @@ using System.IO;
 
 public class AssetUtils : MonoBehaviour 
 {
+    [MenuItem("Assets/Create/Body Part")]
+    public static void CreateBodyPart()
+    {
+        AssetUtils.CreateAsset(typeof(BodyPartInfo), "BodyPartInfo", "Assets/BodyPartInfo.asset", true);
+    }
+
     [MenuItem("Assets/Create/Timeline Sequence")]
     public static void CreateTimelineSequence()
     {
         AssetUtils.CreateAsset(typeof(TimelineSequence), "timelineSequence", "Assets/timelineSequence.asset", true);
     }
 
-    [MenuItem("Assets/Create/Spellbook")]
-    public static void CreateSpellbook()
-    {
-        AssetUtils.CreateAsset(typeof(SpellBookInfo), "Spellbook", "Assets/Spellbook.asset", true);
-    }
-
     [MenuItem("Assets/Create/Ritual Information")]
     public static void CreateRitual()
     {
         AssetUtils.CreateAsset(typeof(RitualInfo), "RitualInfo", "Assets/RitualInfo.asset", true);
-    }
-
-    [MenuItem("Assets/Create/Spell")]
-    public static void CreateSpell()
-    {
-        AssetUtils.CreateAsset(typeof(Spell), "Spell", "Assets/Spell.asset", true);
     }
 
     [MenuItem("Assets/Create/Illness")]
