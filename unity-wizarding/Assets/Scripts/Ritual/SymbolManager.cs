@@ -49,12 +49,14 @@ public class SymbolManager : MonoBehaviour {
 
     public void InitialiseSymbols()
     {
-        const float SymbolYOffset = 2.5f;
-        Vector3 SymbolPosition = new Vector3(6.6f,1.0f,0);
+        float SymbolYOffset = Screen.height/6.0f;
+        Vector3 SymbolPosition = new Vector3(Screen.width - Screen.width/8.0f,Screen.height - Screen.height/3.0f,0);
 
         for(int i = 0; i < this.m_NumSymbols; i++)
         {
-            var symbol = (Symbol)GameObject.Instantiate(this.m_SymbolList[i], SymbolPosition - i * SymbolYOffset * Vector3.up, Quaternion.identity);
+            Vector3 symbolPos = Camera.main.ScreenToWorldPoint(SymbolPosition - i * SymbolYOffset * Vector3.up);
+            symbolPos.z = 0.0f;
+            var symbol = (Symbol)GameObject.Instantiate(this.m_SymbolList[i], symbolPos, Quaternion.identity);
             symbol.transform.parent = transform;
         }
     }

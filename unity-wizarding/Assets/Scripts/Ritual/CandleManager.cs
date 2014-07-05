@@ -39,7 +39,9 @@ public class CandleManager : MonoBehaviour {
 	
     private void InitialiseCandle()
     {
-        Vector3 CandlePosition = new Vector3(6.6f, 3.0f, 0);
+        //Vector3 CandlePosition = new Vector3(6.6f, 3.0f, 0);
+        Vector3 CandlePosition = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width - Screen.width / 8.0f, Screen.height - Screen.height / 8.0f, 0));
+        CandlePosition.z = 0.0f;
 
         var candle = (GameObject)GameObject.Instantiate(Candle, CandlePosition, Quaternion.identity);
         candle.transform.parent = transform;
