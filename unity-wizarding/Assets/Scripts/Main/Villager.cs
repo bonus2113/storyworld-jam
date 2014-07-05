@@ -49,6 +49,8 @@ public class Villager : MonoBehaviour
                     Destroy(this.m_ArmObject.gameObject);
                     this.m_ArmObject = (GameObject)GameObject.Instantiate(illness.ArmPrefab, this.transform.position, Quaternion.identity);
                     this.m_ArmObject.tag = "Arms";
+                    this.m_ArmObject.transform.parent = this.transform;
+                    this.m_ArmObject.GetComponent<SpriteRenderer>().color = Color.yellow;
                 }
                 break;
             case BodyPartType.Body:
@@ -56,6 +58,8 @@ public class Villager : MonoBehaviour
                     Destroy(this.m_BodyObject.gameObject);
                     this.m_BodyObject = (GameObject)GameObject.Instantiate(illness.BodyPrefab, this.transform.position, Quaternion.identity);
                     this.m_BodyObject.tag = "Body";
+                    this.m_BodyObject.transform.parent = this.transform;
+                    this.m_BodyObject.GetComponent<SpriteRenderer>().color = Color.yellow;
                 }
                 break;
             case BodyPartType.Head:
@@ -63,6 +67,8 @@ public class Villager : MonoBehaviour
                     Destroy(this.m_HeadObject.gameObject);
                     this.m_HeadObject = (GameObject)GameObject.Instantiate(illness.HeadPrefab, this.transform.position, Quaternion.identity);
                     this.m_HeadObject.tag = "Head";
+                    this.m_HeadObject.transform.parent = this.transform;
+                    this.m_HeadObject.GetComponent<SpriteRenderer>().color = Color.yellow;
                 }
                 break;
             case BodyPartType.Legs:
@@ -70,6 +76,8 @@ public class Villager : MonoBehaviour
                     Destroy(this.m_LegsObject.gameObject);
                     this.m_LegsObject = (GameObject)GameObject.Instantiate(illness.LegPrefab, this.transform.position, Quaternion.identity);
                     this.m_LegsObject.tag = "Legs";
+                    this.m_LegsObject.transform.parent = this.transform;
+                    this.m_LegsObject.GetComponent<SpriteRenderer>().color = Color.yellow;
                 }
                 break;
         }
