@@ -1,0 +1,88 @@
+Initialize engine version: 4.5.1f3 (73cd57f80e3e)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA NVS 5400M   (ID=0xdef)
+    Vendor:   NVIDIA
+    VRAM:     977 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\dario\Documents\storyworld-jam\unity-wizarding\Build\Nostrum_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\dario\Documents\storyworld-jam\unity-wizarding\Build\Nostrum_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\dario\Documents\storyworld-jam\unity-wizarding\Build\Nostrum_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\dario\Documents\storyworld-jam\unity-wizarding\Build\Nostrum_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+- Completed reload, in  0.093 seconds
+desktop: 1600x900 60Hz; virtual: 1600x900 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+Platform assembly: C:\Users\dario\Documents\storyworld-jam\unity-wizarding\Build\Nostrum_Data\Managed\System.Core.dll (this message is harmless)
+Entered Game State: Intro
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Platform assembly: C:\Users\dario\Documents\storyworld-jam\unity-wizarding\Build\Nostrum_Data\Managed\System.dll (this message is harmless)
+Exited Game State: Intro
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Entered Game State: InspectingVillager
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Exited Game State: InspectingVillager
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Entered Game State: Ritual
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+TargetSymbolType: Symbol1
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+TargetSymbolPos: (1000.0, 450.0)
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+TargetCandleNum: 5
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+RitualGameManager (RitualGameManager)
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+SymbolPlacementPos: (1000.0, 444.0)
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Exited Game State: Ritual
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Ritual heuristic value: 0.4747001
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Entered Game State: CastingSpell
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+UnloadTime: 2.585865 ms
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 544.
+Total: 0.970636 ms (FindLiveObjects: 0.026446 ms CreateObjectMapping: 0.014210 ms MarkObjects: 0.233679 ms  DeleteObjects: 0.009868 ms)
+
+Entered Game State: Intro
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Exited Game State: Intro
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Entered Game State: InspectingVillager
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
