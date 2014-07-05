@@ -3,5 +3,6 @@
     Intro,
     InspectingVillager,
     Ritual,
-    CastingSpell
+    CastingSpell,
+    ShowResult
 }
