@@ -14,4 +14,5 @@ public class Illness : ScriptableObject
 
     public Spell CuringSpell;
     public TimelineSequence Sequence;
+    public CandleConfigurations.CandleConfig CandleConfig;
 }

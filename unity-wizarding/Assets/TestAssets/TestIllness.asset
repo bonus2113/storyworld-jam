@@ -19,3 +19,4 @@ MonoBehaviour:
   LegPrefab: {fileID: 100000, guid: 2a9faf6adff9ac243aabd2820805e6f4, type: 2}
   CuringSpell: {fileID: 11400000, guid: cda0c5809da686a4a9009aa46947c334, type: 2}
   Sequence: {fileID: 11400000, guid: 589ffc27a34609146bcafc84d41d705c, type: 2}
+  CandleConfig: 0
