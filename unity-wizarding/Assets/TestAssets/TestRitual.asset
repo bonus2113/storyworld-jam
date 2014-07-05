@@ -9,7 +9,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 26770965efde18d419ea0790fa1dfbf5, type: 3}
-  m_Name: RitualInfo
+  m_Name: TestRitual
   m_EditorClassIdentifier: 
-  Symbol: 0
+  SymbolPosition: {x: 0, y: 0}
+  SymbolType: 0
   CandlePositions: []
