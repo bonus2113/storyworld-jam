@@ -35,8 +35,15 @@ public class CastingGameState : GameStateBase
     {
         base.OnUpdate();
         timer += Time.deltaTime;
+        Debug.Log(timingManager.MissedSymbols);
         if (timer > survivalTime)
         {
+            GameManager.ActiveModel.SuccededCasting = true;
+            GameManager.GoTo(GameStateType.ShowResult);
+        }
+        else if (timingManager.MissedSymbols > GameManager.ActiveModel.PlacedCandlesCount)
+        {
+            GameManager.ActiveModel.SuccededCasting = false;
             GameManager.GoTo(GameStateType.ShowResult);
         }
     }
