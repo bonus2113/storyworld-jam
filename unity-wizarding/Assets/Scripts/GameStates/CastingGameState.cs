@@ -49,6 +49,7 @@ public class CastingGameState : GameStateBase
             else if (timingManager.MissedSymbols > 0 && timingManager.MissedSymbols >= GameManager.ActiveModel.PlacedCandlesCount)
             {
                 GameManager.ActiveModel.SuccededCasting = false;
+                GameObject.FindObjectOfType<Villager>().DiseaseRandomPart(GameManager.ActiveModel.CurrentIllness);
                 GameManager.GoTo(GameStateType.ShowResult);
             }
         }

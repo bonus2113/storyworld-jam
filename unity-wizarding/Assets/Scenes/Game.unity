@@ -2032,6 +2032,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79ce9dccadda1214c9145b6e9b8a287a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CureEffect: {fileID: 100002, guid: da2f8b4fe356d4c40abb947211caf6a6, type: 2}
+  FailEffect: {fileID: 100002, guid: da2f8b4fe356d4c40abb947211caf6a6, type: 2}
   m_NormalHeads:
   - {fileID: 100000, guid: 2a9faf6adff9ac243aabd2820805e6f4, type: 2}
   m_NormalBody:
@@ -4226,13 +4228,13 @@ MonoBehaviour:
     absolute: 0
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 198
+  mWidth: 194
   mHeight: 40
   mDepth: 4
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 4.94999981
+  aspectRatio: 4.8499999
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
   mFont: {fileID: 0}
@@ -5025,13 +5027,13 @@ MonoBehaviour:
     absolute: 0
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 156
+  mWidth: 154
   mHeight: 40
   mDepth: 4
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 3.9000001
+  aspectRatio: 3.8499999
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
   mFont: {fileID: 0}
