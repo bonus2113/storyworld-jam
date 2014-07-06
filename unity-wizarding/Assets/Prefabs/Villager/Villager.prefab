@@ -57,13 +57,13 @@ MonoBehaviour:
   CureEffect: {fileID: 100002, guid: 140ded3431acd7a4a845829c7557348d, type: 2}
   FailEffect: {fileID: 100002, guid: 5e8128866a93eb7409330d0198773c0d, type: 2}
   m_NormalHeads:
-  - {fileID: 100000, guid: 2a9faf6adff9ac243aabd2820805e6f4, type: 2}
+  - {fileID: 100000, guid: 3767d41c1a3f1ba4188c403dcab26700, type: 2}
   m_NormalBody:
-  - {fileID: 100000, guid: 7f2f73f47d5e2d541b73c6dc643ea4d2, type: 2}
+  - {fileID: 100000, guid: 31153f3a18b473e428a43a073b9ceeb3, type: 2}
   m_NormalArms:
-  - {fileID: 100000, guid: cfaa70328799231438ab5c511a9ef676, type: 2}
+  - {fileID: 100000, guid: 9675ad2d60443754e988fff6ed4e335a, type: 2}
   m_NormalLegs:
-  - {fileID: 100000, guid: 84bd3ce8608215c4b83b599aae71496c, type: 2}
+  - {fileID: 100000, guid: e665ff78882d2314eb0409a6b0ad0a26, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
