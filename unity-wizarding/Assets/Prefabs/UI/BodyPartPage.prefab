@@ -159,7 +159,7 @@ MonoBehaviour:
     target: {fileID: 0}
     relative: 1
     absolute: 0
-  mColor: {r: 1, g: 1, b: 1, a: 1}
+  mColor: {r: .0522274971, g: .0567742288, b: .102941155, a: 1}
   mPivot: 4
   mWidth: 382
   mHeight: 60
@@ -169,7 +169,7 @@ MonoBehaviour:
   keepAspectRatio: 0
   aspectRatio: 6.36666679
   keepCrispWhenShrunk: 1
-  mTrueTypeFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  mTrueTypeFont: {fileID: 12800000, guid: 4da087c956a812349a18546b5f440d14, type: 3}
   mFont: {fileID: 0}
   mText: SPELL NAME
   mFontSize: 60
