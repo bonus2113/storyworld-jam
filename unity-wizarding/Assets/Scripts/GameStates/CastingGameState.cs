@@ -43,6 +43,7 @@ public class CastingGameState : GameStateBase
             if (timer > survivalTime)
             {
                 GameManager.ActiveModel.SuccededCasting = true;
+                GameObject.FindObjectOfType<Villager>().Cure(GameManager.ActiveModel.IllBodyPart);
                 GameManager.GoTo(GameStateType.ShowResult);
             }
             else if (timingManager.MissedSymbols > 0 && timingManager.MissedSymbols >= GameManager.ActiveModel.PlacedCandlesCount)

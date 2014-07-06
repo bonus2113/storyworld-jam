@@ -106,6 +106,54 @@ public class Villager : MonoBehaviour
 
     }
 
+    public void Cure(BodyPartType bodyPart)
+    {
+        GameObject switchedPart = new GameObject();
+
+        switch (bodyPart)
+        {
+            case BodyPartType.Arms:
+                {
+                    Destroy(this.m_ArmObject.gameObject);
+                    this.m_ArmObject = (GameObject)GameObject.Instantiate(this.m_NormalArms[UnityEngine.Random.Range(0, this.m_NormalArms.Count)], this.transform.position, Quaternion.identity);
+                    this.m_ArmObject.tag = "Arms";
+                    switchedPart = this.m_ArmObject;
+                }
+                break;
+            case BodyPartType.Body:
+                {
+                    Destroy(this.m_BodyObject.gameObject);
+                    this.m_BodyObject = (GameObject)GameObject.Instantiate(this.m_NormalBody[UnityEngine.Random.Range(0, this.m_NormalArms.Count)], this.transform.position, Quaternion.identity);
+                    this.m_BodyObject.tag = "Body";
+                    switchedPart = this.m_BodyObject;
+                }
+                break;
+            case BodyPartType.Head:
+                {
+                    Destroy(this.m_HeadObject.gameObject);
+                    this.m_HeadObject = (GameObject)GameObject.Instantiate(this.m_NormalHeads[UnityEngine.Random.Range(0, this.m_NormalHeads.Count)], this.transform.position, Quaternion.identity);
+                    this.m_HeadObject.tag = "Head";
+                    switchedPart = this.m_HeadObject;
+
+                }
+                break;
+            case BodyPartType.Legs:
+                {
+                    Destroy(this.m_LegsObject.gameObject);
+                    this.m_LegsObject = (GameObject)GameObject.Instantiate(this.m_NormalLegs[UnityEngine.Random.Range(0, this.m_NormalArms.Count)], this.transform.position, Quaternion.identity);
+                    this.m_LegsObject.tag = "Legs";
+                    switchedPart = this.m_LegsObject;
+
+                }
+                break;
+        }
+        switchedPart.transform.parent = this.transform;
+        Vector3 tempVec = switchedPart.transform.localScale;
+        tempVec.x *= -1;
+        switchedPart.transform.localScale = tempVec;
+
+    }
+
     public void StartMove(Action callback)
     {
         introEndCallback = callback;
