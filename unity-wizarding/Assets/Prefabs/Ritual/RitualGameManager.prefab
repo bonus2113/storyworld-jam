@@ -60,6 +60,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TargetRitualInfo: {fileID: 0}
+  m_PersistantRitual: {fileID: 0}
   b_Debug: 1
 --- !u!114 &11400004
 MonoBehaviour:
