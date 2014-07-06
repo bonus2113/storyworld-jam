@@ -16,6 +16,6 @@ MonoBehaviour:
   HeadPrefab: {fileID: 100000, guid: 2a9faf6adff9ac243aabd2820805e6f4, type: 2}
   ArmPrefab: {fileID: 100000, guid: cfaa70328799231438ab5c511a9ef676, type: 2}
   BodyPrefab: {fileID: 100000, guid: 7f2f73f47d5e2d541b73c6dc643ea4d2, type: 2}
-  LegPrefab: {fileID: 100000, guid: 6c035a1df2760ef45aff44d70a542eb9, type: 2}
+  LegPrefab: {fileID: 100000, guid: 84bd3ce8608215c4b83b599aae71496c, type: 2}
   Sequence: {fileID: 11400000, guid: 589ffc27a34609146bcafc84d41d705c, type: 2}
-  CandleConfig: 0
+  CandleConfig: 2
