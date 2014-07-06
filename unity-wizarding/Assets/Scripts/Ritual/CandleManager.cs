@@ -79,7 +79,6 @@ public class CandleManager : MonoBehaviour {
 
         GameObject candleDebug = new GameObject();
 
-        Debug.Log(this.m_RitualManager);
         for (int i = 0; i < this.m_RitualManager.m_TargetRitualInfo.CandlePositions.Count; i++)
         {
             debugSymbolWorldPos = Camera.main.ScreenToWorldPoint(this.m_RitualManager.m_TargetRitualInfo.CandlePositions[i]);
