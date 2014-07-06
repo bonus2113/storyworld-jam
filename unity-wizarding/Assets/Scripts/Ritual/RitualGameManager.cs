@@ -109,7 +109,7 @@ public class RitualGameManager : MonoBehaviour {
     {
         Debug.Log("TargetSymbolType: " + this.m_TargetRitualInfo.SymbolType);
         //Debug.Log("TargetSymbolPos: " + this.m_TargetRitualInfo.SymbolPosition);
-        //Debug.Log("TargetCandleNum: " + this.m_TargetRitualInfo.CandlePositions.Count);
+        Debug.Log("TargetCandleNum: " + this.m_TargetRitualInfo.CandlePositions.Count);
 
         /*
         for (int i = 0; i < this.m_TargetRitualInfo.CandlePositions.Count; i++)
