@@ -10,8 +10,13 @@ public class TimeLineSymbol : MonoBehaviour
 
     public static float Difficulty = 0;
 
+
+
 	private void Update () 
     {
+        if(renderer.enabled)
+            return;
+
 	    transform.Translate(-Vector2.up *  Time.deltaTime * SPEED * (1 + Difficulty * 2));
 	    if (transform.localPosition.y < 0)
 	    {
@@ -19,7 +24,10 @@ public class TimeLineSymbol : MonoBehaviour
 	        {
 	            MissedSymbol(this);
 	        }
-            Destroy(gameObject);
+	        enabled = false;
+            Destroy(gameObject, 2);
+	        renderer.enabled = false;
+            gameObject.GetComponentInChildren<Animator>().SetTrigger("Missed");
 	    }
 	}
 }
