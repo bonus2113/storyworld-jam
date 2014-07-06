@@ -6,6 +6,8 @@ public class Candle : MonoBehaviour {
     public bool b_Placed = false;
     public bool b_Extinguished = false;
     public GameObject m_CandleFlame;
+    public GameObject CandleEffect;
+
 	// Use this for initialization
 	void Start () {
 
@@ -31,6 +33,7 @@ public class Candle : MonoBehaviour {
 
         b_Extinguished = true;
         Destroy(this.m_CandleFlame.gameObject);
+        GameObject.Instantiate(CandleEffect, this.m_CandleFlame.transform.position, Quaternion.identity);
         return this.transform.position;
     }
 }
