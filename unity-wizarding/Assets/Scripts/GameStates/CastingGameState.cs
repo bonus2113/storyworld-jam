@@ -12,6 +12,8 @@ public class CastingGameState : GameStateBase
 
     private float timer = 0;
 
+    private bool updating = false;
+
     public override GameStateType Type
     {
         get { return GameStateType.CastingSpell; }
@@ -29,21 +31,25 @@ public class CastingGameState : GameStateBase
         timingManager.GetComponent<UIPlayTween>().Play(false);
         GameManager.ActiveModel.SpellHeuristicValue += timingManager.GetHeuristicValue();
         timingManager.StopPlayback();
+        updating = false;
     }
 
     protected override void OnUpdate()
     {
-        base.OnUpdate();
-        timer += Time.deltaTime;
-        if (timer > survivalTime)
+        if (updating)
         {
-            GameManager.ActiveModel.SuccededCasting = true;
-            GameManager.GoTo(GameStateType.ShowResult);
-        }
-        else if (timingManager.MissedSymbols >= GameManager.ActiveModel.PlacedCandlesCount)
-        {
-            GameManager.ActiveModel.SuccededCasting = false;
-            GameManager.GoTo(GameStateType.ShowResult);
+            base.OnUpdate();
+            timer += Time.deltaTime;
+            if (timer > survivalTime)
+            {
+                GameManager.ActiveModel.SuccededCasting = true;
+                GameManager.GoTo(GameStateType.ShowResult);
+            }
+            else if (timingManager.MissedSymbols > 0 && timingManager.MissedSymbols >= GameManager.ActiveModel.PlacedCandlesCount)
+            {
+                GameManager.ActiveModel.SuccededCasting = false;
+                GameManager.GoTo(GameStateType.ShowResult);
+            }
         }
     }
 
@@ -53,5 +59,7 @@ public class CastingGameState : GameStateBase
         timingManager.gameObject.SetActive(true);
         timingManager.GetComponent<UIPlayTween>().Play(true);
         timingManager.PlaySequence(GameManager.ActiveModel.CurrentIllness.Sequence, 1.0f - GameManager.ActiveModel.SpellHeuristicValue);
+        yield return new WaitForSeconds(1.0f);
+        updating = true;
     }
 }
