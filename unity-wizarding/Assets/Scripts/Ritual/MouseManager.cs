@@ -108,6 +108,7 @@ public class MouseManager : MonoBehaviour {
             this.b_CandleActive = false;
 
             this.m_CandleManager.AddCandleToList(this.m_ActiveCandle);
+            this.m_ActiveCandle.GetComponent<AudioSource>().Play();
             this.m_ActiveCandle = null;
         }
 
@@ -171,6 +172,7 @@ public class MouseManager : MonoBehaviour {
             this.b_MouseDrag = false;
             this.b_SymbolActive = false;
             this.m_SymbolManager.UpdateSymbolPositionAndType(this.m_ActiveSymbol.SymbolType, Input.mousePosition);
+            this.m_ActiveSymbol.GetComponent<AudioSource>().Play();
         }
     }
 }

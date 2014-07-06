@@ -4,6 +4,8 @@ using System.Collections;
 public class RitualGameState : GameStateBase
 {
     [SerializeField] private GameObject gameplayRoot;
+    [SerializeField]
+    private AudioSource humSource;
 
     private RitualGameManager ritualGameManager;
 
@@ -16,6 +18,7 @@ public class RitualGameState : GameStateBase
     {
         Camera.main.GetComponent<Animator>().SetTrigger("ZoomIn");
         StartCoroutine(WaitForZoom());
+        humSource.volume = 0.15f;
     }
 
     protected override void OnExitState()
@@ -27,6 +30,7 @@ public class RitualGameState : GameStateBase
         gameplayRoot.SetActive(false);
         GameManager.ActiveModel.PlacedCandlesCount = ritualGameManager.PlacedCandlesCount;
         GameManager.ActiveModel.SpellHeuristicValue = ritualGameManager.GetHeuristicValue();
+        humSource.volume = 0.0f;
     }
 
     protected override void OnUpdate()
