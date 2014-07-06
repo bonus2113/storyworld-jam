@@ -14,7 +14,7 @@ public class Flicker : MonoBehaviour
 	
 	void Update ()
 	{
-	    var val = Mathf.Sin(Time.timeSinceLevelLoad)*Mathf.Cos(Time.timeSinceLevelLoad*0.4f + 2)*0.5f + 0.1f;
+	    var val = Mathf.Sin(Time.timeSinceLevelLoad)*Mathf.Cos(Time.timeSinceLevelLoad*0.4f + 2)*0.6f + 0.4f;
 	    val = Mathf.Lerp(1, val, Multiplier);
         spriteRenderer.color = Color.Lerp(Color.white, new Color(1, 1, 1, 0), val);
 	}

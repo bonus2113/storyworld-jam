@@ -23,7 +23,7 @@ public class TimingManager : MonoBehaviour
     private int missedSymbols = 0;
     private int hitSymbols = 0;
 
-    public void PlaySequence(TimelineSequence sequence)
+    public void PlaySequence(TimelineSequence sequence, float difficulty = 0)
     {
         isPlaying = true;
         currentTime = -spawnTimeDifference;
@@ -32,6 +32,7 @@ public class TimingManager : MonoBehaviour
         CurrentSequence.StartPlayback();
         missedSymbols = 0;
         hitSymbols = 0;
+        TimeLineSymbol.Difficulty = difficulty;
     }
 
     public void StopPlayback()

@@ -7,6 +7,8 @@ public class CastingGameState : GameStateBase
     private TimingManager timingManager;
     [SerializeField]
     private GameObject overlayLight;
+    [SerializeField]
+    private float survivalTime = 20.0f;
 
     private float timer = 0;
 
@@ -33,7 +35,7 @@ public class CastingGameState : GameStateBase
     {
         base.OnUpdate();
         timer += Time.deltaTime;
-        if (timer > 5)
+        if (timer > survivalTime)
         {
             GameManager.GoTo(GameStateType.ShowResult);
         }
@@ -44,6 +46,6 @@ public class CastingGameState : GameStateBase
         yield return new WaitForSeconds(1.0f);
         timingManager.gameObject.SetActive(true);
         timingManager.GetComponent<UIPlayTween>().Play(true);
-        timingManager.PlaySequence(GameManager.ActiveModel.CurrentIllness.Sequence);
+        timingManager.PlaySequence(GameManager.ActiveModel.CurrentIllness.Sequence, 1.0f - GameManager.ActiveModel.SpellHeuristicValue);
     }
 }
