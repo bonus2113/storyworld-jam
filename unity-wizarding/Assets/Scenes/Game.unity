@@ -1917,9 +1917,10 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 542914230}
-  - 114: {fileID: 542914233}
   - 114: {fileID: 542914232}
   - 65: {fileID: 542914231}
+  - 114: {fileID: 542914234}
+  - 212: {fileID: 542914233}
   m_Layer: 5
   m_Name: IllnessesTab
   m_TagString: Untagged
@@ -1934,7 +1935,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 542914229}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -207, y: 399, z: 0}
+  m_LocalPosition: {x: -196, y: 302, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1648445161}
@@ -1950,8 +1951,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 200, y: 100, z: 0}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 219.006287, y: 165.296066, z: 0}
+  m_Center: {x: -7.25088501, y: 142.865662, z: 0}
 --- !u!114 &542914232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1977,7 +1978,29 @@ MonoBehaviour:
   - mTarget: {fileID: 954447885}
     mMethodName: SetModeIllnesses
     oneShot: 0
---- !u!114 &542914233
+--- !u!212 &542914233
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 542914229}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &542914234
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -1985,7 +2008,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 542914229}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b3dc54f924693f41b5cbecb267e647a, type: 3}
+  m_Script: {fileID: 11500000, guid: e96b31ce75e592f45a1cff563a4869db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   leftAnchor:
@@ -2006,26 +2029,17 @@ MonoBehaviour:
     absolute: 0
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 200
-  mHeight: 100
-  mDepth: -1
-  autoResizeBoxCollider: 1
+  mWidth: 290
+  mHeight: 520
+  mDepth: -2
+  autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 2
-  mAtlas: {fileID: 11400000, guid: f02b4fe972b3e1b4f940be6ee1f8485f, type: 2}
-  mSpriteName: tab
-  mType: 0
-  mFillDirection: 4
-  mFillAmount: 1
-  mInvert: 0
-  mFlip: 1
-  mFillCenter: 1
-  centerType: 1
-  leftType: 1
-  rightType: 1
-  bottomType: 1
-  topType: 1
+  aspectRatio: .557692289
+  mSprite: {fileID: 21300000, guid: 34fdc152eca090c48ab8eb6d75a3a1ad, type: 3}
+  mMat: {fileID: 0}
+  mShader: {fileID: 4800000, guid: e75727d9555d9d14ca51d91908c681bc, type: 3}
+  nextSprite: {fileID: 0}
 --- !u!1 &553708575
 GameObject:
   m_ObjectHideFlags: 0
@@ -2233,11 +2247,11 @@ MonoBehaviour:
   m_NormalHeads:
   - {fileID: 100000, guid: efffa466288ea94418a527d41a75f617, type: 2}
   m_NormalBody:
-  - {fileID: 100000, guid: 7f2f73f47d5e2d541b73c6dc643ea4d2, type: 2}
+  - {fileID: 100000, guid: 863b40bcfb868ac42bd170c657725c1d, type: 2}
   m_NormalArms:
   - {fileID: 100000, guid: 676bce00e3255b947b049f5da442db62, type: 2}
   m_NormalLegs:
-  - {fileID: 100000, guid: efffa466288ea94418a527d41a75f617, type: 2}
+  - {fileID: 100000, guid: 6c035a1df2760ef45aff44d70a542eb9, type: 2}
 --- !u!95 &632348910
 Animator:
   serializedVersion: 3
@@ -3811,7 +3825,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 954447884}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1000, z: 0}
+  m_LocalPosition: {x: 0, y: -1200, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1315142909}
@@ -3857,7 +3871,7 @@ MonoBehaviour:
   onFinished: []
   eventReceiver: {fileID: 0}
   callWhenFinished: 
-  from: {x: 0, y: -1000, z: 0}
+  from: {x: 0, y: -1200, z: 0}
   to: {x: 0, y: 0, z: 0}
   worldSpace: 0
 --- !u!114 &954447890
@@ -4506,7 +4520,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1326498268}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 117, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1412280831}
@@ -4714,9 +4728,10 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1412280831}
-  - 114: {fileID: 1412280834}
   - 114: {fileID: 1412280833}
   - 65: {fileID: 1412280832}
+  - 114: {fileID: 1412280835}
+  - 212: {fileID: 1412280834}
   m_Layer: 5
   m_Name: BodyPartsTab
   m_TagString: Untagged
@@ -4731,7 +4746,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1412280830}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7, y: 399, z: 0}
+  m_LocalPosition: {x: 20, y: 298, z: 0}
   m_LocalScale: {x: 1.00007999, y: 1.00007999, z: 1.00007999}
   m_Children:
   - {fileID: 1326498270}
@@ -4747,8 +4762,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 200, y: 100, z: 0}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 200, y: 86.6669617, z: 0}
+  m_Center: {x: 0, y: 114.860901, z: 0}
 --- !u!114 &1412280833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4774,7 +4789,29 @@ MonoBehaviour:
   - mTarget: {fileID: 954447885}
     mMethodName: SetModeBodyParts
     oneShot: 0
---- !u!114 &1412280834
+--- !u!212 &1412280834
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1412280830}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &1412280835
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -4782,7 +4819,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1412280830}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b3dc54f924693f41b5cbecb267e647a, type: 3}
+  m_Script: {fileID: 11500000, guid: e96b31ce75e592f45a1cff563a4869db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   leftAnchor:
@@ -4803,26 +4840,17 @@ MonoBehaviour:
     absolute: 0
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 200
-  mHeight: 100
-  mDepth: -1
-  autoResizeBoxCollider: 1
+  mWidth: 290
+  mHeight: 512
+  mDepth: 0
+  autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 2
-  mAtlas: {fileID: 11400000, guid: f02b4fe972b3e1b4f940be6ee1f8485f, type: 2}
-  mSpriteName: tab
-  mType: 0
-  mFillDirection: 4
-  mFillAmount: 1
-  mInvert: 0
-  mFlip: 1
-  mFillCenter: 1
-  centerType: 1
-  leftType: 1
-  rightType: 1
-  bottomType: 1
-  topType: 1
+  aspectRatio: .56640625
+  mSprite: {fileID: 21300002, guid: 34fdc152eca090c48ab8eb6d75a3a1ad, type: 3}
+  mMat: {fileID: 0}
+  mShader: {fileID: 4800000, guid: e75727d9555d9d14ca51d91908c681bc, type: 3}
+  nextSprite: {fileID: 0}
 --- !u!1 &1437041211
 GameObject:
   m_ObjectHideFlags: 0
@@ -5422,7 +5450,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1648445160}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 111, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 542914230}
