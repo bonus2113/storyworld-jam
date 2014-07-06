@@ -42,8 +42,8 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: 5edf49e4ed4f3b3459344fdc378ae26d, type: 2}
   mSprites:
   - name: rune01
-    x: 0
-    y: 30
+    x: 841
+    y: 98
     width: 76
     height: 76
     borderLeft: 0
@@ -55,7 +55,7 @@ MonoBehaviour:
     paddingTop: 4
     paddingBottom: 0
   - name: spellbookArrow
-    x: 148
+    x: 918
     y: 120
     width: 88
     height: 54
@@ -68,7 +68,7 @@ MonoBehaviour:
     paddingTop: 23
     paddingBottom: 23
   - name: spellbookBackground
-    x: 0
+    x: 841
     y: 276
     width: 668
     height: 748
@@ -82,19 +82,19 @@ MonoBehaviour:
     paddingBottom: 0
   - name: spellbookIcon
     x: 0
-    y: 107
-    width: 147
-    height: 168
+    y: 50
+    width: 840
+    height: 974
     borderLeft: 0
     borderRight: 0
     borderTop: 0
     borderBottom: 0
-    paddingLeft: 27
-    paddingRight: 26
-    paddingTop: 18
-    paddingBottom: 14
+    paddingLeft: 0
+    paddingRight: 51
+    paddingTop: 14
+    paddingBottom: 36
   - name: tab
-    x: 148
+    x: 841
     y: 175
     width: 200
     height: 100
