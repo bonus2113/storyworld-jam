@@ -7,12 +7,15 @@ public class MouseManager : MonoBehaviour {
 
     private SymbolManager m_SymbolManager = null;
     private CandleManager m_CandleManager = null;
+    private RitualGameManager m_RitualManager = null;
 
     private Candle m_ActiveCandle = null;
+    private float m_OrigCandleScale = 1.0f;
 
     private RaycastHit m_RayHit = new RaycastHit();
 
     private Symbol m_ActiveSymbol = null;
+    private float m_OrigSymbolScale = 1.0f;
 
     private bool b_CandleActive = false;
     private bool b_SymbolActive = false;
@@ -33,6 +36,13 @@ public class MouseManager : MonoBehaviour {
         if (this.m_CandleManager == null)
         {
             Debug.Log("Null candleManager.");
+            Destroy(this);
+        }
+
+        this.m_RitualManager = GameObject.FindObjectOfType<RitualGameManager>();
+        if (this.m_RitualManager == null)
+        {
+            Debug.Log("Null m_RitualManager.");
             Destroy(this);
         }
 	
@@ -65,8 +75,10 @@ public class MouseManager : MonoBehaviour {
                 Vector3 candleWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 candleWorldPos.z = 0.0f;
                 this.m_ActiveCandle.transform.position = candleWorldPos;
-                this.m_ActiveCandle.transform.parent = transform;
+                this.m_ActiveCandle.transform.parent = this.m_RitualManager.m_PersistantRitual.transform;
                 this.m_ActiveCandle.transform.localScale *= 1.5f;
+                m_OrigCandleScale = this.m_ActiveCandle.transform.localScale.x;
+                this.m_ActiveCandle.transform.localScale = this.m_OrigCandleScale * Vector3.one * (1.0f - PerspectiveScaleFactor() * 0.5f);
                 this.b_MouseDrag = true;
                 this.b_CandleActive = true;
 
@@ -86,6 +98,8 @@ public class MouseManager : MonoBehaviour {
                 Vector3 candleWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 candleWorldPos.z = 0.0f;
                 this.m_ActiveCandle.transform.position = candleWorldPos;
+                this.m_ActiveCandle.transform.localScale = this.m_OrigCandleScale * Vector3.one * (1.0f - PerspectiveScaleFactor()*0.5f);
+
             }
         }
         else if (Input.GetMouseButtonUp(0) && this.b_CandleActive)
@@ -97,6 +111,11 @@ public class MouseManager : MonoBehaviour {
             this.m_ActiveCandle = null;
         }
 
+    }
+
+    private float PerspectiveScaleFactor()
+    {
+        return (Mathf.Clamp01((Input.mousePosition.y / Screen.height) - 0.3f) / 0.7f);//[0.0f,1.0f]
     }
 
     private void HandleSymbolPlacement()
@@ -115,8 +134,11 @@ public class MouseManager : MonoBehaviour {
                 if (this.m_ActiveSymbol == null)
                 {
                     this.m_ActiveSymbol = ((GameObject)GameObject.Instantiate(hitSymbol.gameObject)).GetComponent<Symbol>();
-                    this.m_ActiveSymbol.transform.parent = transform;
-                    this.m_ActiveSymbol.transform.localScale *= 2.0f;
+                    this.m_ActiveSymbol.transform.parent = this.m_RitualManager.m_PersistantRitual.transform;
+                    this.m_ActiveSymbol.transform.localScale *= 1.5f;
+                    m_OrigSymbolScale = this.m_ActiveSymbol.transform.localScale.x;
+                    this.m_ActiveSymbol.transform.localScale = this.m_OrigSymbolScale * Vector3.one * (1.0f - PerspectiveScaleFactor() * 0.5f);
+
                 }
 
                 Vector3 symbolWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -140,6 +162,8 @@ public class MouseManager : MonoBehaviour {
                 Vector3 symbolWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 symbolWorldPos.z = 0.0f;
                 this.m_ActiveSymbol.transform.position = symbolWorldPos;
+                this.m_ActiveSymbol.transform.localScale = this.m_OrigSymbolScale * Vector3.one * (1.0f - PerspectiveScaleFactor() * 0.5f);
+
             }
         }
         else if (Input.GetMouseButtonUp(0) && this.b_SymbolActive)

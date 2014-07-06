@@ -10,15 +10,22 @@ public class RitualGameManager : MonoBehaviour {
     private CandleManager m_CandleManager = null;
 
     private RitualInfo m_CurrentRitualInfo;
+    [HideInInspector]
     public RitualInfo m_TargetRitualInfo;
+    [HideInInspector]
+    public GameObject m_PersistantRitual;
 
-    private const int MAX_CANDLE_DISTANCE_FROM_SYMBOL = 100;
+    private const int MAX_CANDLE_DISTANCE_FROM_SYMBOL = 275;
+    private const float CANDLE_PERSPECTIVE_CORRECTION_FACTOR = 0.4f;
 
 
     public bool b_Debug = false;
 
 	// Use this for initialization
 	void Start () {
+
+        this.m_PersistantRitual = new GameObject();
+        this.m_PersistantRitual.name = "PersistantRitual";
 
         this.m_CurrentRitualInfo = ScriptableObject.CreateInstance<RitualInfo>();
 
@@ -63,7 +70,7 @@ public class RitualGameManager : MonoBehaviour {
         for (int i = 0; i < this.m_TargetRitualInfo.CandlePositions.Count; i++)
         {
             Vector2 candlePos = this.m_TargetRitualInfo.CandlePositions[i];
-            this.m_TargetRitualInfo.CandlePositions[i] = this.m_TargetRitualInfo.SymbolPosition + new Vector2(candlePos.x * MAX_CANDLE_DISTANCE_FROM_SYMBOL, candlePos.y * MAX_CANDLE_DISTANCE_FROM_SYMBOL);
+            this.m_TargetRitualInfo.CandlePositions[i] = this.m_TargetRitualInfo.SymbolPosition + new Vector2(candlePos.x * MAX_CANDLE_DISTANCE_FROM_SYMBOL, candlePos.y * MAX_CANDLE_DISTANCE_FROM_SYMBOL*((candlePos.y < 0.0f)?CANDLE_PERSPECTIVE_CORRECTION_FACTOR:1.0f));
         }
 
         this.DebugPrintTargetRitualInfo();
