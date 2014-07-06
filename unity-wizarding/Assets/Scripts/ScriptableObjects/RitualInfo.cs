@@ -41,7 +41,14 @@ public class RitualInfo : ScriptableObject
             compPositions.RemoveAt(closestIndex);
         }
 
-        return Mathf.Clamp01(heuristicValues.Average() - PENALTY_PER_CANDLE * candleDifference);
+        if (heuristicValues.Count != 0)
+        {
+            return Mathf.Clamp01(heuristicValues.Average() - PENALTY_PER_CANDLE * candleDifference);
+        }
+        else
+        {
+            return 0;
+        }
     }
 
     private int FindClosest(Vector2 matchPos, List<Vector2> compPositions)
