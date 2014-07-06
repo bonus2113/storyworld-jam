@@ -13,6 +13,8 @@ public class TimingManager : MonoBehaviour
 
     public TimelineSequence CurrentSequence = null;
 
+    public int MissedSymbols { get { return missedSymbols; } }
+
     [SerializeField] 
     private float spawnTimeDifference = 5;
 

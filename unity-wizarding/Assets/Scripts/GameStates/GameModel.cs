@@ -7,4 +7,5 @@ public class GameModel
     public BodyPartType IllBodyPart;
     public float SpellHeuristicValue;
     public int PlacedCandlesCount;
+    public bool SuccededCasting;
 }

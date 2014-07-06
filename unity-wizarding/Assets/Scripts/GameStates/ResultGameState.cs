@@ -20,7 +20,7 @@ public class ResultGameState : GameStateBase
     {
         yield return new WaitForSeconds(2.0f);
         spellLabel.gameObject.SetActive(true);
-        if (GameManager.ActiveModel.SpellHeuristicValue > successfulThreshold)
+        if (GameManager.ActiveModel.SuccededCasting)
         {
             SpellSuccessful();
         }

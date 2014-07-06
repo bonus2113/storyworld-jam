@@ -22,6 +22,7 @@ public class RitualGameState : GameStateBase
     {
         Camera.main.GetComponent<Animator>().SetTrigger("ZoomOut");
         gameplayRoot.SetActive(false);
+        GameManager.ActiveModel.PlacedCandlesCount = ritualGameManager.PlacedCandlesCount;
         GameManager.ActiveModel.SpellHeuristicValue = ritualGameManager.GetHeuristicValue();
     }
 

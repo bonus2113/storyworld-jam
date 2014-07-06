@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public class RitualGameManager : MonoBehaviour {
 
+    public int PlacedCandlesCount { get { return m_CandleManager.GetCandleList().Count; } }
+
     private SymbolManager m_SymbolManager = null;
     private CandleManager m_CandleManager = null;
 
