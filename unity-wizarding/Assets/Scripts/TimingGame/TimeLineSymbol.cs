@@ -14,7 +14,7 @@ public class TimeLineSymbol : MonoBehaviour
 
 	private void Update () 
     {
-        if(renderer.enabled)
+        if(!renderer.enabled)
             return;
 
 	    transform.Translate(-Vector2.up *  Time.deltaTime * SPEED * (1 + Difficulty * 2));

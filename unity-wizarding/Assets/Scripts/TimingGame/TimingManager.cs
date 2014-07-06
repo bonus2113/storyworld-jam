@@ -86,6 +86,9 @@ public class TimingManager : MonoBehaviour
 
     void TimingManager_MissedSymbol()
     {
+        if(!isPlaying)
+            return;
+
         missedSymbols++;
         this.m_CandleManager.ExtinguishCandle();
     }
