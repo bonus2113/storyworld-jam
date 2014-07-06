@@ -7,6 +7,8 @@ public class CandleManager : MonoBehaviour {
     [SerializeField]
     private GameObject Candle = null;
 
+    private GameObject candleButton;
+
     private RitualGameManager m_RitualManager;
 
     [SerializeField]
@@ -42,8 +44,8 @@ public class CandleManager : MonoBehaviour {
         Vector3 CandlePosition = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width - Screen.width / 8.0f, Screen.height - Screen.height / 8.0f, 0));
         CandlePosition.z = 0.0f;
 
-        var candle = (GameObject)GameObject.Instantiate(Candle, CandlePosition, Quaternion.identity);
-        candle.transform.parent = transform;
+        candleButton = (GameObject)GameObject.Instantiate(Candle, CandlePosition, Quaternion.identity);
+        candleButton.transform.parent = transform;
     }
 
 	// Update is called once per frame
@@ -64,6 +66,11 @@ public class CandleManager : MonoBehaviour {
     {
         this.m_CandleList.Add(candle);
         candle.b_Placed = true;
+    }
+
+    public void ClearButton()
+    {
+        Destroy(this.candleButton.gameObject);
     }
 
     public void EnableDebug()
