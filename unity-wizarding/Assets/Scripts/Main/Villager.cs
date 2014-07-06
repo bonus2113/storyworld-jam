@@ -7,6 +7,9 @@ public class Villager : MonoBehaviour
 {
     private Action introEndCallback;
 
+    public GameObject CureEffect;
+    public GameObject FailEffect;
+
     public List<GameObject> m_NormalHeads;
     public List<GameObject> m_NormalBody;
     public List<GameObject> m_NormalArms;
@@ -16,6 +19,8 @@ public class Villager : MonoBehaviour
     private GameObject m_ArmObject;
     private GameObject m_BodyObject;
     private GameObject m_LegsObject;
+
+    private BodyPartType diseasedPart;
 
     private Animator anim;
 
@@ -61,6 +66,7 @@ public class Villager : MonoBehaviour
     public void SetIllness(Illness illness, BodyPartType bodyPart)
     {
         GameObject switchedPart = new GameObject();
+        this.diseasedPart = bodyPart;
         switch (bodyPart)
         {
             case BodyPartType.Arms:
@@ -151,7 +157,18 @@ public class Villager : MonoBehaviour
         Vector3 tempVec = switchedPart.transform.localScale;
         tempVec.x *= -1;
         switchedPart.transform.localScale = tempVec;
+        GameObject.Instantiate(CureEffect, switchedPart.transform.position, Quaternion.identity);
+    }
 
+    public void DiseaseRandomPart(Illness illness)
+    {
+        BodyPartType partToDisease = (BodyPartType)UnityEngine.Random.Range(0, (int)BodyPartType.ENUM_COUNT);
+        while (partToDisease == diseasedPart)
+        {
+            partToDisease = (BodyPartType)UnityEngine.Random.Range(0, (int)BodyPartType.ENUM_COUNT);
+        }
+        SetIllness(illness, partToDisease);
+        GameObject.Instantiate(FailEffect, this.transform.position, Quaternion.identity);
     }
 
     public void StartMove(Action callback)
