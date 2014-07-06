@@ -92,16 +92,16 @@ public class CandleManager : MonoBehaviour {
         }
     }
 
-    public void ExtinguishCandle()
+    public Vector3 ExtinguishCandle()
     {
         for (int i = 0; i < this.m_CandleList.Count; i++)
         {
             if (!this.m_CandleList[i].b_Extinguished)
             {
-                this.m_CandleList[i].Extinguish();
-                return;
+                return this.m_CandleList[i].Extinguish();
             }
         }
         //all candles are already extinguished - spell fail condition 
+        return Vector3.zero;
     }
 }
