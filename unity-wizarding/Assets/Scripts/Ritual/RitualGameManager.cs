@@ -57,7 +57,7 @@ public class RitualGameManager : MonoBehaviour {
 
         //symbol type - based on affected body part
         this.m_TargetRitualInfo.SymbolType = (SymbolTypes.SymbolType) gameManager.ActiveModel.IllBodyPart;
-        this.m_TargetRitualInfo.SymbolPosition = new Vector2(Screen.width/2.0f, Screen.height / 2.0f);
+        this.m_TargetRitualInfo.SymbolPosition = new Vector2(Screen.width/2.0f, Screen.height *0.4f);
 
         this.m_TargetRitualInfo.CandlePositions = new List<Vector2>();
 
