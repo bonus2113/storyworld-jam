@@ -53,3 +53,7 @@ TagManager:
     userID: 2
     uniqueID: 3991308657
     locked: 0
+  - name: Overlay
+    userID: 3
+    uniqueID: 2699717889
+    locked: 0
