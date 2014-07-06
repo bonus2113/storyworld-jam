@@ -1,18 +1,21 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Candle : MonoBehaviour {
+public class Candle : MonoBehaviour
+{
 
     public bool b_Placed = false;
     public bool b_Extinguished = false;
     public GameObject m_CandleFlame;
+    public GameObject CandleEffect;
 
     private float m_TimeToExtinguish = 0.2f;
     private float m_InternalTimer = 0.0f;
     private Vector3 m_OrigCandleScale;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
 
         if (this.m_CandleFlame == null)
         {
@@ -21,10 +24,11 @@ public class Candle : MonoBehaviour {
         }
         this.m_OrigCandleScale = this.m_CandleFlame.transform.localScale;
 
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
 
         if (this.m_CandleFlame != null && this.b_Extinguished)
         {
@@ -41,7 +45,7 @@ public class Candle : MonoBehaviour {
             }
         }
 
-	}
+    }
 
     public Vector3 Extinguish()
     {
@@ -51,6 +55,7 @@ public class Candle : MonoBehaviour {
         }
 
         b_Extinguished = true;
+        GameObject.Instantiate(CandleEffect, this.m_CandleFlame.transform.position, Quaternion.identity);
         //Destroy(this.m_CandleFlame.gameObject);
         //this.m_CandleFlame = null;
         return this.transform.position;
