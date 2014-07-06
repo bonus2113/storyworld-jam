@@ -157,6 +157,7 @@ MonoBehaviour:
   b_Placed: 0
   b_Extinguished: 0
   m_CandleFlame: {fileID: 100002}
+  CandleEffect: {fileID: 100002, guid: da2f8b4fe356d4c40abb947211caf6a6, type: 2}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
