@@ -1505,6 +1505,48 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 40bf486b3b46c3448819a16cb70d67e7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1 &422658825
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100002, guid: e074ab2a6f206664ebd489086c668112, type: 2}
+  m_PrefabInternal: {fileID: 1543633546}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 422658827}
+  - 114: {fileID: 422658826}
+  m_Layer: 0
+  m_Name: CandleManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &422658826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400008, guid: e074ab2a6f206664ebd489086c668112,
+    type: 2}
+  m_PrefabInternal: {fileID: 1543633546}
+  m_GameObject: {fileID: 422658825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a498cae098e83a049afd587be49368bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Candle: {fileID: 100000, guid: a4a7a83df5949c0499287349a0bc441d, type: 2}
+  m_DebugGraphic: {fileID: 100000, guid: 64b1907638267fd40a44c7d290637c41, type: 2}
+--- !u!4 &422658827
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400002, guid: e074ab2a6f206664ebd489086c668112, type: 2}
+  m_PrefabInternal: {fileID: 1543633546}
+  m_GameObject: {fileID: 422658825}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.11374128, y: 3.18626595, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1581318479}
+  m_RootOrder: 0
 --- !u!1 &521112019
 GameObject:
   m_ObjectHideFlags: 0
@@ -3920,13 +3962,13 @@ MonoBehaviour:
     absolute: 0
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 194
+  mWidth: 196
   mHeight: 40
   mDepth: 4
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 4.8499999
+  aspectRatio: 4.9000001
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
   mFont: {fileID: 0}
@@ -4425,7 +4467,6 @@ GameObject:
   - 114: {fileID: 1581318478}
   - 114: {fileID: 1581318477}
   - 114: {fileID: 1581318476}
-  - 114: {fileID: 1581318475}
   m_Layer: 0
   m_Name: RitualGameManager
   m_TagString: Untagged
@@ -4433,20 +4474,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1581318475
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400006, guid: e074ab2a6f206664ebd489086c668112,
-    type: 2}
-  m_PrefabInternal: {fileID: 1543633546}
-  m_GameObject: {fileID: 1581318474}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a498cae098e83a049afd587be49368bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Candle: {fileID: 100000, guid: a4a7a83df5949c0499287349a0bc441d, type: 2}
-  m_DebugGraphic: {fileID: 100000, guid: 64b1907638267fd40a44c7d290637c41, type: 2}
 --- !u!114 &1581318476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4501,7 +4528,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -.229276299, y: -1.89927506, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 422658827}
   m_Father: {fileID: 275555694}
   m_RootOrder: 0
 --- !u!1001 &1582128475
@@ -4668,13 +4696,13 @@ MonoBehaviour:
     absolute: 0
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 154
+  mWidth: 156
   mHeight: 40
   mDepth: 4
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 3.8499999
+  aspectRatio: 3.9000001
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
   mFont: {fileID: 0}

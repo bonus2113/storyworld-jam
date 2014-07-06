@@ -61,7 +61,10 @@ public class TimeLine : MonoBehaviour
 	        {
                 firstSymbol.MissedSymbol -= symbol_MissedSymbol;
                 activeSymbols.RemoveAt(0);
-                Destroy(firstSymbol.gameObject);
+                firstSymbol.enabled = false;
+                Destroy(firstSymbol.gameObject, 2);
+                firstSymbol.renderer.enabled = false;
+                gameObject.GetComponentInChildren<Animator>().SetTrigger("Hit");
 
 	            if (HitSymbol != null)
 	            {
