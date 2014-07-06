@@ -2249,7 +2249,7 @@ MonoBehaviour:
   m_NormalBody:
   - {fileID: 100000, guid: 7f2f73f47d5e2d541b73c6dc643ea4d2, type: 2}
   m_NormalArms:
-  - {fileID: 100000, guid: 7f2f73f47d5e2d541b73c6dc643ea4d2, type: 2}
+  - {fileID: 100000, guid: cfaa70328799231438ab5c511a9ef676, type: 2}
   m_NormalLegs:
   - {fileID: 100000, guid: 84bd3ce8608215c4b83b599aae71496c, type: 2}
 --- !u!95 &632348910
@@ -4623,7 +4623,7 @@ MonoBehaviour:
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 5
+  aspectRatio: 4.66666651
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 12800000, guid: 4da087c956a812349a18546b5f440d14, type: 3}
   mFont: {fileID: 0}
@@ -5626,7 +5626,7 @@ MonoBehaviour:
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 3.55555558
+  aspectRatio: 3.16666675
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 12800000, guid: 4da087c956a812349a18546b5f440d14, type: 3}
   mFont: {fileID: 0}
