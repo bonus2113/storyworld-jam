@@ -21,6 +21,7 @@ public class RitualGameState : GameStateBase
     protected override void OnExitState()
     {
         Camera.main.GetComponent<Animator>().SetTrigger("ZoomOut");
+        gameplayRoot.GetComponentInChildren<CandleManager>().transform.parent = ritualGameManager.m_PersistantRitual.transform;
         gameplayRoot.SetActive(false);
         GameManager.ActiveModel.PlacedCandlesCount = ritualGameManager.PlacedCandlesCount;
         GameManager.ActiveModel.SpellHeuristicValue = ritualGameManager.GetHeuristicValue();
