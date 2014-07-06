@@ -31,7 +31,7 @@ public class RitualGameState : GameStateBase
 
     protected override void OnUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && this.ritualGameManager != null)
         {
             GameManager.GoTo(GameStateType.CastingSpell);
         }
