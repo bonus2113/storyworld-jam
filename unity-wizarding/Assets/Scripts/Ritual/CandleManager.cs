@@ -30,7 +30,6 @@ public class CandleManager : MonoBehaviour {
             Destroy(this);
         }
 
-
         this.m_CandleList = new List<Candle>();
 
         InitialiseCandle();
@@ -84,5 +83,18 @@ public class CandleManager : MonoBehaviour {
             candleDebug.GetComponent<SpriteRenderer>().color = Color.yellow;
             candleDebug.transform.parent = transform;
         }
+    }
+
+    public void ExtinguishCandle()
+    {
+        for (int i = 0; i < this.m_CandleList.Count; i++)
+        {
+            if (!this.m_CandleList[i].b_Extinguished)
+            {
+                this.m_CandleList[i].Extinguish();
+                return;
+            }
+        }
+        //all candles are already extinguished - spell fail condition 
     }
 }

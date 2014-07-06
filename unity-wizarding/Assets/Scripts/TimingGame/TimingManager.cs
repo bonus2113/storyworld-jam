@@ -13,6 +13,8 @@ public class TimingManager : MonoBehaviour
 
     public TimelineSequence CurrentSequence = null;
 
+    private CandleManager m_CandleManager = null;
+
     public int MissedSymbols { get { return missedSymbols; } }
 
     [SerializeField] 
@@ -73,11 +75,19 @@ public class TimingManager : MonoBehaviour
             timeLines[i].HitSymbol += TimingManager_HitSymbol;
             timeLines[i].MissedSymbol += TimingManager_MissedSymbol;
         }
+
+        this.m_CandleManager = GameObject.FindObjectOfType<CandleManager>();
+        if (this.m_CandleManager == null)
+        {
+            Debug.LogWarning("Null candlemanager.");
+            Destroy(this);
+        }
     }
 
     void TimingManager_MissedSymbol()
     {
         missedSymbols++;
+        this.m_CandleManager.ExtinguishCandle();
     }
 
     void TimingManager_HitSymbol()

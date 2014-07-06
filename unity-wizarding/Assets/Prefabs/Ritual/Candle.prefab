@@ -126,6 +126,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   b_Placed: 0
+  b_Extinguished: 0
+  m_CandleFlame: {fileID: 100002}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
