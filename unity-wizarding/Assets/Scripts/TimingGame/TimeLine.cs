@@ -42,6 +42,10 @@ public class TimeLine : MonoBehaviour
     {
         symbol.MissedSymbol -= symbol_MissedSymbol;
         activeSymbols.Remove(symbol);
+        if (MissedSymbol != null)
+        {
+            MissedSymbol();
+        }
     }
 	
 	// Update is called once per frame
