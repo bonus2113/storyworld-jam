@@ -22,14 +22,15 @@ public class Candle : MonoBehaviour {
 	
 	}
 
-    public void Extinguish()
+    public Vector3 Extinguish()
     {
         if (b_Extinguished)
         {
-            return;
+            return Vector3.zero;
         }
 
         b_Extinguished = true;
         Destroy(this.m_CandleFlame.gameObject);
+        return this.transform.position;
     }
 }
