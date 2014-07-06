@@ -57,7 +57,7 @@ MonoBehaviour:
   m_NormalHeads:
   - {fileID: 100000, guid: 2a9faf6adff9ac243aabd2820805e6f4, type: 2}
   m_NormalBody:
-  - {fileID: 100000, guid: 2a9faf6adff9ac243aabd2820805e6f4, type: 2}
+  - {fileID: 100000, guid: 7f2f73f47d5e2d541b73c6dc643ea4d2, type: 2}
   m_NormalArms:
   - {fileID: 100000, guid: 676bce00e3255b947b049f5da442db62, type: 2}
   m_NormalLegs:
