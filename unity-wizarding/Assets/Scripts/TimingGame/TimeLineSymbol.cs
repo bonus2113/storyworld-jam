@@ -8,9 +8,11 @@ public class TimeLineSymbol : MonoBehaviour
 
     private const float SPEED = 1.0f;
 
+    public static float Difficulty = 0;
+
 	private void Update () 
     {
-	    transform.Translate(-Vector2.up *  Time.deltaTime * SPEED);
+	    transform.Translate(-Vector2.up *  Time.deltaTime * SPEED * (1 + Difficulty * 2));
 	    if (transform.localPosition.y < 0)
 	    {
 	        if (MissedSymbol != null)

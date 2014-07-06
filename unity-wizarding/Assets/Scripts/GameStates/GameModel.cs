@@ -6,4 +6,5 @@ public class GameModel
     public Illness CurrentIllness;
     public BodyPartType IllBodyPart;
     public float SpellHeuristicValue;
+    public int PlacedCandlesCount;
 }
