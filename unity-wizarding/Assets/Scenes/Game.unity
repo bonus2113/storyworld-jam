@@ -2245,13 +2245,13 @@ MonoBehaviour:
   CureEffect: {fileID: 100002, guid: 140ded3431acd7a4a845829c7557348d, type: 2}
   FailEffect: {fileID: 100002, guid: 5e8128866a93eb7409330d0198773c0d, type: 2}
   m_NormalHeads:
-  - {fileID: 100000, guid: efffa466288ea94418a527d41a75f617, type: 2}
+  - {fileID: 100000, guid: 2a9faf6adff9ac243aabd2820805e6f4, type: 2}
   m_NormalBody:
-  - {fileID: 100000, guid: 863b40bcfb868ac42bd170c657725c1d, type: 2}
+  - {fileID: 100000, guid: 7f2f73f47d5e2d541b73c6dc643ea4d2, type: 2}
   m_NormalArms:
-  - {fileID: 100000, guid: 676bce00e3255b947b049f5da442db62, type: 2}
+  - {fileID: 100000, guid: 7f2f73f47d5e2d541b73c6dc643ea4d2, type: 2}
   m_NormalLegs:
-  - {fileID: 100000, guid: 6c035a1df2760ef45aff44d70a542eb9, type: 2}
+  - {fileID: 100000, guid: 84bd3ce8608215c4b83b599aae71496c, type: 2}
 --- !u!95 &632348910
 Animator:
   serializedVersion: 3
@@ -3705,8 +3705,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   illnesses:
-  - {fileID: 11400000, guid: 13ef2807a647d464f9c83d3626b647a6, type: 2}
-  - {fileID: 11400000, guid: 8e1911af4d22156479fef623129e3316, type: 2}
+  - {fileID: 11400000, guid: 8a220a148262d6c4fbac0def0bc310d0, type: 2}
 --- !u!114 &952184776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4481,13 +4480,13 @@ MonoBehaviour:
     absolute: 0
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 180
+  mWidth: 168
   mHeight: 36
   mDepth: 4
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 5
+  aspectRatio: 4.66666651
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 12800000, guid: 4da087c956a812349a18546b5f440d14, type: 3}
   mFont: {fileID: 0}
@@ -5484,13 +5483,13 @@ MonoBehaviour:
     absolute: 0
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 126
+  mWidth: 114
   mHeight: 36
   mDepth: 4
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 3.5
+  aspectRatio: 3.16666675
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 12800000, guid: 4da087c956a812349a18546b5f440d14, type: 3}
   mFont: {fileID: 0}
