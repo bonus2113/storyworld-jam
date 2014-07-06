@@ -54,8 +54,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79ce9dccadda1214c9145b6e9b8a287a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CureEffect: {fileID: 100002, guid: da2f8b4fe356d4c40abb947211caf6a6, type: 2}
-  FailEffect: {fileID: 100002, guid: da2f8b4fe356d4c40abb947211caf6a6, type: 2}
+  CureEffect: {fileID: 100002, guid: 140ded3431acd7a4a845829c7557348d, type: 2}
+  FailEffect: {fileID: 100002, guid: 5e8128866a93eb7409330d0198773c0d, type: 2}
   m_NormalHeads:
   - {fileID: 100000, guid: efffa466288ea94418a527d41a75f617, type: 2}
   m_NormalBody:

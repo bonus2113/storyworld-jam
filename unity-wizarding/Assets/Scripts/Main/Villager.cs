@@ -157,7 +157,7 @@ public class Villager : MonoBehaviour
         Vector3 tempVec = switchedPart.transform.localScale;
         tempVec.x *= -1;
         switchedPart.transform.localScale = tempVec;
-        GameObject.Instantiate(CureEffect, switchedPart.transform.position, Quaternion.identity);
+        GameObject.Instantiate(CureEffect, switchedPart.transform.position + Vector3.right, Quaternion.identity);
     }
 
     public void DiseaseRandomPart(Illness illness)
@@ -168,7 +168,7 @@ public class Villager : MonoBehaviour
             partToDisease = (BodyPartType)UnityEngine.Random.Range(0, (int)BodyPartType.ENUM_COUNT);
         }
         SetIllness(illness, partToDisease);
-        GameObject.Instantiate(FailEffect, this.transform.position, Quaternion.identity);
+        GameObject.Instantiate(FailEffect, this.transform.position+Vector3.right, Quaternion.identity);
     }
 
     public void StartMove(Action callback)
