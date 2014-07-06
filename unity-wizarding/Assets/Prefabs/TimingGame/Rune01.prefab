@@ -85,6 +85,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a28994606f584664999b8a5c537700bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SuccessClip: {fileID: 0}
+  FailClip: {fileID: 8300000, guid: 23ea1aeb72b10dc43bbe0d703e549817, type: 3}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1

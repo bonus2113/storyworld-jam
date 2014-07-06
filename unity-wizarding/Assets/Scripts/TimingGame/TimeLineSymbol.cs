@@ -10,7 +10,9 @@ public class TimeLineSymbol : MonoBehaviour
 
     public static float Difficulty = 0;
 
-
+    private void Start()
+    {
+    }
 
 	private void Update () 
     {

@@ -90,12 +90,14 @@ public class TimingManager : MonoBehaviour
             return;
 
         missedSymbols++;
-        this.m_CandleManager.ExtinguishCandle();
+        var pos = this.m_CandleManager.ExtinguishCandle();
+        AudioManager.PlaySound("RuneFail", pos, 0.1f);
     }
 
     void TimingManager_HitSymbol()
     {
         hitSymbols++;
+        AudioManager.PlaySound("RuneSuccess", Camera.main.transform.position, 0.1f);
     }
 
 	private void Update () 
