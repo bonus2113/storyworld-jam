@@ -3708,8 +3708,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   illnesses:
-  - {fileID: 11400000, guid: 13ef2807a647d464f9c83d3626b647a6, type: 2}
-  - {fileID: 11400000, guid: 8e1911af4d22156479fef623129e3316, type: 2}
+  - {fileID: 11400000, guid: 8a220a148262d6c4fbac0def0bc310d0, type: 2}
 --- !u!114 &952184776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4618,7 +4617,7 @@ MonoBehaviour:
     absolute: 0
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 180
+  mWidth: 168
   mHeight: 36
   mDepth: 4
   autoResizeBoxCollider: 0
@@ -5621,7 +5620,7 @@ MonoBehaviour:
     absolute: 0
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 128
+  mWidth: 114
   mHeight: 36
   mDepth: 4
   autoResizeBoxCollider: 0
